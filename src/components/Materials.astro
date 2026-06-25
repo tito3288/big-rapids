@@ -1,0 +1,14 @@
+---
+const materials = ["Stainless Steel", "Aluminum", "High-Strength Carbon", "Coated Steel"];
+---
+
+<section class="bg-secondary py-20">
+  <div class="site-container">
+    <p class="eyebrow mb-6 text-foreground/70">02 — Materials</p>
+    <div class="flex flex-wrap gap-4">
+      {materials.map((material) => (
+        <div class="border border-chip px-6 py-4 text-sm uppercase tracking-widest text-foreground">{material}</div>
+      ))}
+    </div>
+  </div>
+</section>

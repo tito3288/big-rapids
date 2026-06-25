@@ -1,0 +1,31 @@
+---
+const stats = [
+  { value: "60+", label: "Line · Progressive · Transfer Presses" },
+  { value: "2200", suffix: "T", label: "Maximum Press Capacity" },
+  { value: '110"×300"', label: "Maximum Bed Size", compact: true },
+  { value: "50-2200T", label: "Stamping Range", compact: true },
+];
+---
+
+<section id="capabilities" class="border-t border-line py-24">
+  <div class="site-container">
+    <div class="mb-16 flex flex-wrap items-end justify-between gap-4">
+      <div>
+        <p class="eyebrow mb-3">01 — Capabilities</p>
+        <h2 class="section-title max-w-2xl">Built for complex stampings and welded assemblies.</h2>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-2 gap-px bg-line lg:grid-cols-4">
+      {stats.map((stat) => (
+        <article class="min-w-0 bg-background p-6 md:p-8">
+          <div class:list={["stat-number", stat.compact && "stat-number--compact"]}>
+            {stat.value}{stat.suffix && <span class="text-2xl text-muted">{stat.suffix}</span>}
+          </div>
+          <div class="my-4 h-0.5 w-12 bg-primary"></div>
+          <p class="text-xs uppercase tracking-widest text-muted">{stat.label}</p>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>

@@ -1,1 +1,194 @@
 @import "tailwindcss";
+
+@theme {
+  --color-primary: #DA3426;
+  --color-secondary: #690A14;
+  --color-accent: #DA3426;
+  --color-background: #0D111E;
+  --color-surface: #0a0d17;
+  --color-foreground: #FFFFFF;
+  --color-muted: #B2B6BA;
+  --color-line: rgb(255 255 255 / 0.1);
+  --color-chip: rgb(255 255 255 / 0.3);
+  --color-logo-plate: rgb(255 255 255 / 0.95);
+  --font-heading: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-body: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --radius-sm: 0.125rem;
+  --radius-md: 0.25rem;
+  --radius-lg: 0.5rem;
+}
+
+:root {
+  color-scheme: dark;
+  font-family: var(--font-body);
+  background: var(--color-background);
+  color: var(--color-muted);
+  font-feature-settings: "tnum";
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  background: var(--color-background);
+  color: var(--color-muted);
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.site-container {
+  width: min(100% - 3rem, 1400px);
+  margin-inline: auto;
+}
+
+.contact-container {
+  width: min(100% - 3rem, 1100px);
+  margin-inline: auto;
+}
+
+.eyebrow {
+  color: var(--color-muted);
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.hero-title {
+  color: var(--color-foreground);
+  font-family: var(--font-heading);
+  font-size: clamp(3rem, 7vw, 6rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 0.95;
+}
+
+.section-title {
+  color: var(--color-foreground);
+  font-family: var(--font-heading);
+  font-size: clamp(34px, 4.5vw, 56px);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+}
+
+.stat-number {
+  color: var(--color-foreground);
+  font-size: clamp(48px, 6vw, 80px);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1;
+  max-width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.stat-number--compact {
+  font-size: clamp(1.75rem, 3.2vw, 3.25rem);
+  letter-spacing: -0.035em;
+}
+
+.underline-red {
+  display: inline-block;
+  position: relative;
+}
+
+.underline-red::after {
+  background: var(--color-primary);
+  bottom: 6px;
+  content: "";
+  height: 4px;
+  left: 0;
+  position: absolute;
+  right: 0;
+}
+
+.hero-overlay {
+  background: linear-gradient(
+    180deg,
+    rgb(13 17 30 / 0.55) 0%,
+    rgb(13 17 30 / 0.4) 50%,
+    rgb(13 17 30 / 0.95) 100%
+  );
+}
+
+.card-overlay {
+  background: linear-gradient(
+    180deg,
+    rgb(13 17 30 / 0) 40%,
+    rgb(13 17 30 / 0.92) 100%
+  );
+}
+
+.careers-overlay {
+  background: linear-gradient(
+    90deg,
+    rgb(13 17 30 / 0.92) 0%,
+    rgb(13 17 30 / 0.3) 100%
+  );
+}
+
+.duotone {
+  filter: grayscale(1) contrast(1.1) sepia(0.3) hue-rotate(330deg) saturate(2);
+}
+
+.btn-red {
+  align-items: center;
+  background: var(--color-primary);
+  color: var(--color-foreground);
+  display: inline-flex;
+  font-size: 0.875rem;
+  font-weight: 600;
+  gap: 0.75rem;
+  justify-content: center;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  transition: background-color 0.2s ease, color 0.2s ease;
+  white-space: nowrap;
+}
+
+.btn-red:hover,
+.btn-red:focus-visible {
+  background: var(--color-secondary);
+}
+
+.btn-red:focus-visible,
+.ghost-button:focus-visible,
+.nav-link:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 3px;
+}
+
+.ghost-button {
+  align-items: center;
+  border: 1px solid var(--color-foreground);
+  color: var(--color-foreground);
+  display: inline-flex;
+  font-size: 0.875rem;
+  font-weight: 600;
+  gap: 0.75rem;
+  justify-content: center;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  transition: background-color 0.2s ease, color 0.2s ease;
+  white-space: nowrap;
+}
+
+.ghost-button:hover {
+  background: var(--color-foreground);
+  color: var(--color-background);
+}
+
+.form-status[hidden] {
+  display: none;
+}

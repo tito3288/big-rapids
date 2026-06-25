@@ -1,0 +1,67 @@
+---
+const navItems = [
+  { href: "#capabilities", label: "Capabilities" },
+  { href: "#products", label: "Products" },
+  { href: "#locations", label: "Locations" },
+  { href: "#careers", label: "Careers" },
+];
+---
+
+<header class="absolute left-0 right-0 top-0 z-30">
+  <div class="site-container flex items-center justify-between py-5">
+    <a href="#top" class="rounded-sm bg-logo-plate px-3 py-2" aria-label="Big Rapids Products home">
+      <img src="/images/logo.png" alt="Big Rapids Products" class="h-8 w-auto" />
+    </a>
+
+    <nav class="hidden items-center gap-10 text-sm uppercase tracking-widest text-foreground lg:flex" aria-label="Primary navigation">
+      {navItems.map((item) => (
+        <a class="nav-link transition hover:text-primary" href={item.href}>{item.label}</a>
+      ))}
+      <a class="btn-red px-5 py-2" href="#contact">Request a Quote</a>
+    </nav>
+
+    <button
+      id="menuBtn"
+      class="text-foreground lg:hidden"
+      type="button"
+      aria-controls="mobileNav"
+      aria-expanded="false"
+      aria-label="Open menu"
+    >
+      <svg aria-hidden="true" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <line x1="3" y1="6" x2="21" y2="6"></line>
+        <line x1="3" y1="12" x2="21" y2="12"></line>
+        <line x1="3" y1="18" x2="21" y2="18"></line>
+      </svg>
+    </button>
+  </div>
+
+  <div id="mobileNav" class="hidden border-t border-line bg-background lg:hidden">
+    <nav class="flex flex-col gap-4 px-6 py-4 text-sm uppercase tracking-widest text-foreground" aria-label="Mobile navigation">
+      {navItems.map((item) => (
+        <a class="nav-link" href={item.href}>{item.label}</a>
+      ))}
+      <a class="btn-red w-fit px-5 py-2" href="#contact">Request a Quote</a>
+    </nav>
+  </div>
+</header>
+
+<script>
+  const menuButton = document.getElementById("menuBtn");
+  const mobileNav = document.getElementById("mobileNav");
+
+  menuButton?.addEventListener("click", () => {
+    const isOpen = menuButton.getAttribute("aria-expanded") === "true";
+    menuButton.setAttribute("aria-expanded", String(!isOpen));
+    mobileNav?.classList.toggle("hidden", isOpen);
+    menuButton.setAttribute("aria-label", isOpen ? "Open menu" : "Close menu");
+  });
+
+  mobileNav?.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", () => {
+      menuButton?.setAttribute("aria-expanded", "false");
+      menuButton?.setAttribute("aria-label", "Open menu");
+      mobileNav.classList.add("hidden");
+    });
+  });
+</script>

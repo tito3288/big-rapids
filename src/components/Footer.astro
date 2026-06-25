@@ -1,0 +1,14 @@
+<footer class="border-t border-line py-10">
+  <div class="site-container flex flex-col justify-between gap-6 text-sm md:flex-row">
+    <a href="#top" class="w-fit rounded-sm bg-logo-plate px-3 py-2" aria-label="Big Rapids Products home">
+      <img src="/images/logo.png" alt="Big Rapids Products" class="h-7 w-auto" />
+    </a>
+    <p>© <span data-current-year></span> Big Rapids Products. All rights reserved. · IATF 16949:2016 Certified</p>
+  </div>
+</footer>
+
+<script>
+  document.querySelectorAll("[data-current-year]").forEach((element) => {
+    element.textContent = String(new Date().getFullYear());
+  });
+</script>

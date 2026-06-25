@@ -1,0 +1,86 @@
+<section id="contact" class="bg-surface py-24">
+  <div class="contact-container">
+    <div class="grid gap-12 md:grid-cols-5">
+      <div class="md:col-span-2">
+        <p class="eyebrow mb-3">05 — Start a Project</p>
+        <h2 class="section-title mb-6">Tell us what you need to stamp.</h2>
+        <p class="text-base">
+          Share your project details, press requirements, or product questions and the team will route your inquiry.
+        </p>
+      </div>
+
+      <form id="contactForm" class="space-y-5 border border-line bg-background p-8 md:col-span-3 md:p-10">
+        <input type="text" name="website" tabindex="-1" autocomplete="off" class="hidden" aria-hidden="true" />
+
+        <div>
+          <label class="eyebrow mb-2 block" for="name">Name</label>
+          <input id="name" type="text" name="name" required class="w-full bg-foreground px-4 py-3 text-background" />
+        </div>
+
+        <div class="grid gap-5 md:grid-cols-2">
+          <div>
+            <label class="eyebrow mb-2 block" for="email">Email</label>
+            <input id="email" type="email" name="email" required class="w-full bg-foreground px-4 py-3 text-background" />
+          </div>
+          <div>
+            <label class="eyebrow mb-2 block" for="phone">Phone</label>
+            <input id="phone" type="tel" name="phone" class="w-full bg-foreground px-4 py-3 text-background" />
+          </div>
+        </div>
+
+        <div>
+          <label class="eyebrow mb-2 block" for="message">Message</label>
+          <textarea id="message" name="message" rows="4" required class="w-full bg-foreground px-4 py-3 text-background"></textarea>
+        </div>
+
+        <button type="submit" class="btn-red w-full py-4">Send Inquiry →</button>
+        <p id="formStatus" class="form-status text-sm" role="status" hidden></p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<script>
+  const form = document.getElementById("contactForm");
+  const status = document.getElementById("formStatus");
+
+  form?.addEventListener("submit", async (event) => {
+    event.preventDefault();
+
+    if (!(form instanceof HTMLFormElement) || !status) {
+      return;
+    }
+
+    const submitButton = form.querySelector("button[type='submit']");
+    status.hidden = true;
+    if (submitButton instanceof HTMLButtonElement) {
+      submitButton.disabled = true;
+      submitButton.textContent = "Sending...";
+    }
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        body: new FormData(form),
+      });
+      const result = await response.json();
+
+      status.textContent = result.ok ? "Thanks — we'll be in touch." : result.message || "Something went wrong. Please try again.";
+      status.hidden = false;
+      status.classList.toggle("text-primary", !result.ok);
+
+      if (result.ok) {
+        form.reset();
+      }
+    } catch {
+      status.textContent = "Something went wrong. Please try again.";
+      status.hidden = false;
+      status.classList.add("text-primary");
+    } finally {
+      if (submitButton instanceof HTMLButtonElement) {
+        submitButton.disabled = false;
+        submitButton.textContent = "Send Inquiry →";
+      }
+    }
+  });
+</script>

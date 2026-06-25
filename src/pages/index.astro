@@ -1,5 +1,19 @@
 ---
+import "../styles/global.css";
+import Header from "../components/Header.astro";
+import Hero from "../components/Hero.astro";
+import Capabilities from "../components/Capabilities.astro";
+import Materials from "../components/Materials.astro";
+import ProductCategories from "../components/ProductCategories.astro";
+import Certifications from "../components/Certifications.astro";
+import Footprint from "../components/Footprint.astro";
+import Careers from "../components/Careers.astro";
+import ContactForm from "../components/ContactForm.astro";
+import Footer from "../components/Footer.astro";
 
+const title = "Big Rapids Products — Metal Forming Excellence";
+const description =
+  "Big Rapids Products supplies metal stampings and welded assemblies from five facilities across Michigan and Kentucky.";
 ---
 
 <html lang="en">
@@ -7,11 +21,32 @@
 		<meta charset="utf-8" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
+		<title>{title}</title>
+		<meta name="description" content={description} />
+		<link rel="canonical" href="https://big-rapids.pages.dev/" />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content="https://big-rapids.pages.dev/" />
+		<meta property="og:image" content="/images/image-4.jpg" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
 	</head>
 	<body>
-		<h1>Astro</h1>
+		<Header />
+		<main>
+			<Hero />
+			<Capabilities />
+			<Materials />
+			<ProductCategories />
+			<Certifications />
+			<Footprint />
+			<Careers />
+			<ContactForm />
+		</main>
+		<Footer />
 	</body>
 </html>

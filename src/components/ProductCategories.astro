@@ -1,0 +1,67 @@
+---
+const products = [
+  {
+    title: "Structural Components",
+    index: "01",
+    image: "/images/image-2.jpg",
+    alt: "Structural components",
+    className: "md:col-span-3 h-80",
+    heading: "text-2xl",
+  },
+  {
+    title: "Decorative Trim",
+    index: "02",
+    image: "/images/image-3.jpg",
+    alt: "Decorative trim",
+    className: "md:col-span-3 h-80",
+    heading: "text-2xl",
+  },
+  {
+    title: "Exhaust Parts",
+    index: "03",
+    image: "/images/image-1.jpg",
+    alt: "Exhaust parts",
+    className: "md:col-span-2 h-72",
+    heading: "text-xl",
+  },
+  {
+    title: "Wheel Claddings",
+    index: "04",
+    image: "/images/image-2.jpg",
+    alt: "Wheel claddings",
+    className: "md:col-span-2 h-72",
+    heading: "text-xl",
+  },
+  {
+    title: "EV · Appliance · Building",
+    index: "05",
+    image: "/images/image-3.jpg",
+    alt: "EV appliance and building products",
+    className: "md:col-span-2 h-72",
+    heading: "text-xl",
+  },
+];
+---
+
+<section id="products" class="py-24">
+  <div class="site-container">
+    <p class="eyebrow mb-3">03 — Product Categories</p>
+    <h2 class="section-title mb-12 max-w-2xl">From decorative trim to structural assemblies.</h2>
+    <div class="grid grid-cols-1 gap-4 md:grid-cols-6">
+      {products.map((product) => (
+        <article class:list={[product.className, "group relative overflow-hidden"]}>
+          <img
+            src={product.image}
+            alt={product.alt}
+            class="duotone h-full w-full object-cover transition duration-700 group-hover:scale-105"
+          />
+          <div class="card-overlay absolute inset-0"></div>
+          <div class="absolute bottom-6 left-6">
+            <p class="eyebrow mb-1 text-primary">{product.index}</p>
+            <h3 class:list={[product.heading, "font-semibold text-foreground"]}>{product.title}</h3>
+          </div>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>

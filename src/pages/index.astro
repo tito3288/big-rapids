@@ -48,5 +48,68 @@ const description =
 			<ContactForm />
 		</main>
 		<Footer />
+		<script>
+			const revealSelectors = [
+				"#top .eyebrow",
+				"#top .hero-title",
+				"#top .site-container > div",
+				"main section:not(#top) .site-container > p.eyebrow",
+				"main section:not(#top) .site-container > h2",
+				"main section:not(#top) .site-container > div",
+				"main section article",
+				"main section form",
+				"main section .btn-red",
+				"main section .ghost-button",
+			];
+
+			const setupScrollReveal = () => {
+				const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+				const targets = Array.from(new Set(revealSelectors.flatMap((selector) => Array.from(document.querySelectorAll(selector)))))
+					.filter((target): target is HTMLElement => target instanceof HTMLElement && !target.closest("header"));
+
+				if (!targets.length) return;
+
+				document.documentElement.classList.add("reveal-ready");
+
+				const sectionCounts = new Map<Element, number>();
+
+				targets.forEach((target) => {
+					const section = target.closest("section, footer") ?? document.body;
+					const count = sectionCounts.get(section) ?? 0;
+
+					sectionCounts.set(section, count + 1);
+					target.dataset.reveal = "";
+					target.style.setProperty("--reveal-delay", `${Math.min(count, 5) * 80}ms`);
+				});
+
+				if (reduceMotion || !("IntersectionObserver" in window)) {
+					targets.forEach((target) => target.classList.add("is-visible"));
+					return;
+				}
+
+				const observer = new IntersectionObserver(
+					(entries) => {
+						entries.forEach((entry) => {
+							if (!entry.isIntersecting) return;
+
+							entry.target.classList.add("is-visible");
+							observer.unobserve(entry.target);
+						});
+					},
+					{
+						rootMargin: "0px 0px -12% 0px",
+						threshold: 0.14,
+					},
+				);
+
+				targets.forEach((target) => observer.observe(target));
+			};
+
+			if (document.readyState === "loading") {
+				document.addEventListener("DOMContentLoaded", setupScrollReveal, { once: true });
+			} else {
+				setupScrollReveal();
+			}
+		</script>
 	</body>
 </html>

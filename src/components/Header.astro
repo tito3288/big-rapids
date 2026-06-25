@@ -5,63 +5,232 @@ const navItems = [
   { href: "#locations", label: "Locations" },
   { href: "#careers", label: "Careers" },
 ];
+
+const proofPoints = ["Founded 1977", "5 facilities", "IATF 16949:2016"];
 ---
 
-<header class="absolute left-0 right-0 top-0 z-30">
-  <div class="site-container flex items-center justify-between py-5">
-    <a href="#top" class="rounded-sm bg-logo-plate px-3 py-2" aria-label="Big Rapids Products home">
-      <img src="/images/logo.png" alt="Big Rapids Products" class="h-8 w-auto" />
-    </a>
+<header
+  id="siteHeader"
+  class="fixed left-0 right-0 top-0 z-30 translate-y-0 transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] will-change-transform"
+>
+  <div class="site-container pt-3 sm:pt-5">
+    <div class="border border-line/90 bg-background/78 shadow-[0_24px_80px_rgba(0,0,0,0.22)] backdrop-blur-md">
+      <div class="flex min-h-16 items-stretch justify-between lg:min-h-[84px]">
+        <a
+          href="#top"
+          class="flex shrink-0 items-center border-r border-line bg-logo-plate px-3 transition hover:bg-white sm:px-5"
+          aria-label="Big Rapids Products home"
+        >
+          <img src="/images/logo.png" alt="Big Rapids Products" class="h-7 w-auto sm:h-8" />
+        </a>
 
-    <nav class="hidden items-center gap-10 text-sm uppercase tracking-widest text-foreground lg:flex" aria-label="Primary navigation">
-      {navItems.map((item) => (
-        <a class="nav-link transition hover:text-primary" href={item.href}>{item.label}</a>
-      ))}
-      <a class="btn-red px-5 py-2" href="#contact">Request a Quote</a>
-    </nav>
+        <div class="hidden min-w-0 flex-1 flex-col lg:flex">
+          <div class="flex min-h-9 items-center justify-between border-b border-line px-5">
+            <p class="text-[0.68rem] font-black uppercase tracking-[0.34em] text-muted">
+              Metal Forming Excellence
+            </p>
 
-    <button
-      id="menuBtn"
-      class="text-foreground lg:hidden"
-      type="button"
-      aria-controls="mobileNav"
-      aria-expanded="false"
-      aria-label="Open menu"
-    >
-      <svg aria-hidden="true" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-        <line x1="3" y1="6" x2="21" y2="6"></line>
-        <line x1="3" y1="12" x2="21" y2="12"></line>
-        <line x1="3" y1="18" x2="21" y2="18"></line>
-      </svg>
-    </button>
-  </div>
+            <div class="flex items-center divide-x divide-line text-[0.64rem] font-black uppercase tracking-[0.24em] text-muted">
+              {proofPoints.map((item) => (
+                <span class="px-4 first:pl-0 last:pr-0">{item}</span>
+              ))}
+            </div>
+          </div>
 
-  <div id="mobileNav" class="hidden border-t border-line bg-background lg:hidden">
-    <nav class="flex flex-col gap-4 px-6 py-4 text-sm uppercase tracking-widest text-foreground" aria-label="Mobile navigation">
-      {navItems.map((item) => (
-        <a class="nav-link" href={item.href}>{item.label}</a>
-      ))}
-      <a class="btn-red w-fit px-5 py-2" href="#contact">Request a Quote</a>
-    </nav>
+          <nav class="flex flex-1 items-stretch justify-end text-[0.72rem] font-black uppercase tracking-[0.22em] text-foreground" aria-label="Primary navigation">
+            {navItems.map((item, index) => (
+              <a
+                class="group flex items-center gap-3 border-l border-line px-5 transition hover:bg-foreground hover:text-background"
+                href={item.href}
+              >
+                <span class="text-primary transition group-hover:text-background/70">0{index + 1}</span>
+                <span>{item.label}</span>
+              </a>
+            ))}
+            <a class="btn-red flex items-center px-6" href="#contact">Request a Quote</a>
+          </nav>
+        </div>
+
+        <button
+          id="menuBtn"
+          class="menu-toggle flex min-w-16 items-center justify-center border-l border-line text-foreground transition hover:bg-foreground hover:text-background lg:hidden"
+          type="button"
+          aria-controls="mobileNav"
+          aria-expanded="false"
+          aria-label="Open menu"
+        >
+          <span class="sr-only">Menu</span>
+          <span class="menu-icon" aria-hidden="true">
+            <span class="menu-line menu-line-top"></span>
+            <span class="menu-line menu-line-middle"></span>
+            <span class="menu-line menu-line-bottom"></span>
+          </span>
+        </button>
+      </div>
+
+      <div id="mobileNav" class="mobile-nav-panel border-t border-line bg-background/98 lg:hidden" aria-hidden="true">
+        <nav class="grid text-foreground" aria-label="Mobile navigation">
+          <div class="flex items-center justify-between border-b border-line px-5 py-4">
+            <p class="text-[0.65rem] font-black uppercase tracking-[0.24em] text-muted">Navigation</p>
+            <p class="text-[0.65rem] font-black uppercase tracking-[0.24em] text-primary">BRP</p>
+          </div>
+
+          {navItems.map((item, index) => (
+            <a
+              class="group grid grid-cols-[auto_1fr_auto] items-center gap-4 border-b border-line px-5 py-5 transition hover:bg-foreground hover:text-background"
+              href={item.href}
+            >
+              <span class="text-xs font-black text-primary transition group-hover:text-background/65">0{index + 1}</span>
+              <span class="text-2xl font-black uppercase tracking-normal">{item.label}</span>
+              <span class="text-primary transition group-hover:translate-x-1 group-hover:text-background/65">→</span>
+            </a>
+          ))}
+
+          <div class="grid gap-4 p-5">
+            <div class="grid grid-cols-2 gap-px border border-line bg-line text-center">
+              <div class="bg-background/95 p-4">
+                <p class="text-xl font-black text-foreground">1977</p>
+                <p class="mt-1 text-[0.62rem] font-black uppercase tracking-[0.2em] text-muted">Founded</p>
+              </div>
+              <div class="bg-background/95 p-4">
+                <p class="text-xl font-black text-foreground">5</p>
+                <p class="mt-1 text-[0.62rem] font-black uppercase tracking-[0.2em] text-muted">Facilities</p>
+              </div>
+            </div>
+            <a class="btn-red justify-center px-5 py-4 text-center" href="#contact">Request a Quote</a>
+          </div>
+        </nav>
+      </div>
+    </div>
   </div>
 </header>
 
+<style>
+  .mobile-nav-panel {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    pointer-events: none;
+    transform: translateY(-0.75rem);
+    transition:
+      max-height 0.55s cubic-bezier(0.22, 1, 0.36, 1),
+      opacity 0.35s ease,
+      transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .mobile-nav-panel.is-open {
+    max-height: calc(100vh - 5rem);
+    opacity: 1;
+    overflow-y: auto;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
+
+  .menu-icon {
+    display: grid;
+    height: 1.25rem;
+    place-items: center;
+    position: relative;
+    width: 1.75rem;
+  }
+
+  .menu-line {
+    background: currentColor;
+    display: block;
+    height: 2px;
+    position: absolute;
+    transform-origin: center;
+    transition:
+      opacity 0.2s ease,
+      transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+      width 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+    width: 1.75rem;
+  }
+
+  .menu-line-top {
+    transform: translateY(-0.5rem);
+  }
+
+  .menu-line-bottom {
+    transform: translateY(0.5rem);
+  }
+
+  .menu-toggle[aria-expanded="true"] .menu-line-top {
+    transform: rotate(45deg);
+  }
+
+  .menu-toggle[aria-expanded="true"] .menu-line-middle {
+    opacity: 0;
+    transform: scaleX(0.35);
+  }
+
+  .menu-toggle[aria-expanded="true"] .menu-line-bottom {
+    transform: rotate(-45deg);
+  }
+</style>
+
 <script>
+  const siteHeader = document.getElementById("siteHeader");
   const menuButton = document.getElementById("menuBtn");
   const mobileNav = document.getElementById("mobileNav");
+  let lastScrollY = window.scrollY;
+  let ticking = false;
+
+  const setMenuOpen = (isOpen: boolean) => {
+    menuButton?.setAttribute("aria-expanded", String(isOpen));
+    menuButton?.setAttribute("aria-label", isOpen ? "Close menu" : "Open menu");
+    mobileNav?.setAttribute("aria-hidden", String(!isOpen));
+    mobileNav?.classList.toggle("is-open", isOpen);
+    siteHeader?.classList.remove("-translate-y-full");
+    siteHeader?.classList.add("translate-y-0");
+  };
+
+  const setHeaderVisibility = () => {
+    if (!siteHeader) return;
+
+    const currentScrollY = window.scrollY;
+    const isMenuOpen = menuButton?.getAttribute("aria-expanded") === "true";
+    const isNearTop = currentScrollY < 80;
+    const scrollDelta = currentScrollY - lastScrollY;
+
+    if (isMenuOpen || isNearTop) {
+      siteHeader.classList.remove("-translate-y-full");
+      siteHeader.classList.add("translate-y-0");
+      lastScrollY = currentScrollY;
+      ticking = false;
+      return;
+    }
+
+    if (Math.abs(scrollDelta) < 6) {
+      ticking = false;
+      return;
+    }
+
+    siteHeader.classList.toggle("-translate-y-full", scrollDelta > 0);
+    siteHeader.classList.toggle("translate-y-0", scrollDelta < 0);
+    lastScrollY = currentScrollY;
+    ticking = false;
+  };
 
   menuButton?.addEventListener("click", () => {
     const isOpen = menuButton.getAttribute("aria-expanded") === "true";
-    menuButton.setAttribute("aria-expanded", String(!isOpen));
-    mobileNav?.classList.toggle("hidden", isOpen);
-    menuButton.setAttribute("aria-label", isOpen ? "Open menu" : "Close menu");
+    setMenuOpen(!isOpen);
   });
 
   mobileNav?.querySelectorAll("a").forEach((link) => {
     link.addEventListener("click", () => {
-      menuButton?.setAttribute("aria-expanded", "false");
-      menuButton?.setAttribute("aria-label", "Open menu");
-      mobileNav.classList.add("hidden");
+      setMenuOpen(false);
     });
   });
+
+  window.addEventListener(
+    "scroll",
+    () => {
+      if (ticking) return;
+
+      ticking = true;
+      window.requestAnimationFrame(setHeaderVisibility);
+    },
+    { passive: true },
+  );
 </script>

@@ -1,14 +1,61 @@
 ---
-const materials = ["Stainless Steel", "Aluminum", "High-Strength Carbon", "Coated Steel"];
+const materials = [
+  {
+    name: "Stainless Steel",
+    use: "Exhaust systems, bright trim, wheel claddings and appliance parts.",
+  },
+  {
+    name: "Aluminum",
+    use: "Stamped and roll formed trim parts for automotive applications.",
+  },
+  {
+    name: "High-Strength Carbon",
+    use: "Structural stampings, reinforcements, brackets and frame components.",
+  },
+  {
+    name: "Coated Steel",
+    use: "Production stampings where surface protection and downstream finishing matter.",
+  },
+];
+
+const finishCapabilities = ["Welded assemblies", "E-coated parts", "Painted parts", "Powder coated parts", "Plated parts"];
 ---
 
-<section class="bg-secondary py-20">
-  <div class="site-container">
-    <p class="eyebrow mb-6 text-foreground/70">02 — Materials</p>
-    <div class="flex flex-wrap gap-4">
-      {materials.map((material) => (
-        <div class="border border-chip px-6 py-4 text-sm uppercase tracking-widest text-foreground">{material}</div>
-      ))}
+<section class="relative overflow-hidden bg-secondary py-20 md:py-24">
+  <div class="absolute inset-y-0 right-0 hidden w-1/2 border-l border-chip/40 bg-[linear-gradient(135deg,transparent_0,transparent_47%,rgb(255_255_255_/_0.08)_47%,rgb(255_255_255_/_0.08)_53%,transparent_53%,transparent_100%)] bg-[length:34px_34px] opacity-40 lg:block"></div>
+
+  <div class="site-container relative">
+    <div class="grid gap-12 lg:grid-cols-[minmax(0,0.65fr)_minmax(0,1fr)] lg:items-start">
+      <div>
+        <p class="eyebrow mb-4 text-foreground/70">02 — Materials</p>
+        <h2 class="max-w-xl text-4xl font-extrabold leading-none tracking-normal text-foreground md:text-6xl">
+          Stainless, aluminum and coated metals. Formed at production scale.
+        </h2>
+        <p class="mt-6 max-w-lg text-base leading-7 text-foreground/75 md:text-lg">
+          Big Rapids Products specializes in stainless steel applications and stamps aluminum, high-strength carbon and coated steel parts.
+        </p>
+      </div>
+
+      <div class="grid gap-px border border-chip/45 bg-chip/45 sm:grid-cols-2">
+        {materials.map((material) => (
+          <article class="min-h-48 bg-secondary/95 p-6 md:p-7">
+            <div class="mb-8 flex items-start justify-between gap-4">
+              <h3 class="max-w-[12rem] text-xl font-bold uppercase tracking-[0.12em] text-foreground">{material.name}</h3>
+              <span class="h-2.5 w-2.5 shrink-0 bg-primary"></span>
+            </div>
+            <p class="text-sm leading-6 text-foreground/72">{material.use}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+
+    <div class="mt-10 grid gap-6 border-t border-chip/45 pt-8 lg:grid-cols-[minmax(0,0.65fr)_minmax(0,1fr)] lg:items-center">
+      <p class="eyebrow text-foreground/70">Secondary operations &amp; supply base support</p>
+      <div class="flex flex-wrap gap-3">
+        {finishCapabilities.map((capability) => (
+          <span class="border border-chip/55 px-4 py-3 text-xs font-semibold uppercase tracking-[0.18em] text-foreground">{capability}</span>
+        ))}
+      </div>
     </div>
   </div>
 </section>

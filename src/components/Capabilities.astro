@@ -1,29 +1,69 @@
 ---
 const stats = [
-  { value: "60+", label: "Line · Progressive · Transfer Presses" },
-  { value: "2200", suffix: "T", label: "Maximum Press Capacity" },
-  { value: '110"×300"', label: "Maximum Bed Size", compact: true },
-  { value: "50-2200T", label: "Stamping Range", compact: true },
+  {
+    value: "60+",
+    label: "Presses",
+    detail: "Line, progressive and transfer",
+  },
+  {
+    value: "2200",
+    unit: "T",
+    label: "Maximum press capacity",
+    detail: "Transfer press tonnage",
+  },
+  {
+    value: "110 x 300",
+    unit: "in.",
+    label: "Maximum bed size",
+    detail: "ISGEC transfer press",
+    compact: true,
+  },
+  {
+    value: "50-2200",
+    unit: "T",
+    label: "Stamping range",
+    detail: "Production press capacity",
+    compact: true,
+  },
 ];
+
+const services = ["Tool Design", "Prototypes", "Engineering", "Manufacturing", "Roll Forming", "Assembly & Welding"];
 ---
 
-<section id="capabilities" class="border-t border-line py-24">
+<section id="capabilities" class="border-t border-line py-20 md:py-24">
   <div class="site-container">
-    <div class="mb-16 flex flex-wrap items-end justify-between gap-4">
+    <div class="mb-12 grid gap-8 lg:mb-16 lg:grid-cols-[minmax(0,0.95fr)_minmax(320px,0.55fr)] lg:items-end">
       <div>
         <p class="eyebrow mb-3">01 — Capabilities</p>
-        <h2 class="section-title max-w-2xl">Built for complex stampings and welded assemblies.</h2>
+        <h2 class="section-title max-w-3xl">Built for complex stampings and welded assemblies.</h2>
+      </div>
+      <div class="max-w-xl lg:justify-self-end">
+        <p class="text-base leading-7 text-muted md:text-lg">
+          A full spectrum of services from tooling design and prototypes to engineering, manufacturing, roll forming, assembly and welding.
+        </p>
+        <div class="mt-6 flex flex-wrap gap-2">
+          {services.map((service) => (
+            <span class="border border-line px-3 py-2 text-[0.68rem] uppercase tracking-[0.18em] text-muted">{service}</span>
+          ))}
+        </div>
       </div>
     </div>
 
-    <div class="grid grid-cols-2 gap-px bg-line lg:grid-cols-4">
-      {stats.map((stat) => (
-        <article class="min-w-0 bg-background p-6 md:p-8">
-          <div class:list={["stat-number", stat.compact && "stat-number--compact"]}>
-            {stat.value}{stat.suffix && <span class="text-2xl text-muted">{stat.suffix}</span>}
+    <div class="grid grid-cols-1 gap-px border border-line bg-line sm:grid-cols-2 lg:grid-cols-4">
+      {stats.map((stat, index) => (
+        <article class="flex min-h-64 min-w-0 flex-col justify-between bg-background p-6 md:p-8">
+          <div>
+            <p class="text-xs font-semibold uppercase tracking-[0.2em] text-primary">0{index + 1}</p>
+            <div class="mt-8 flex min-w-0 items-baseline gap-2">
+              <span class:list={["stat-number", stat.compact && "stat-number--compact"]}>{stat.value}</span>
+              {stat.unit && <span class="text-xl font-bold uppercase text-muted md:text-2xl">{stat.unit}</span>}
+            </div>
           </div>
-          <div class="my-4 h-0.5 w-12 bg-primary"></div>
-          <p class="text-xs uppercase tracking-widest text-muted">{stat.label}</p>
+          <div>
+            <div class="mb-5 h-0.5 w-12 bg-primary"></div>
+            <p class="text-xs uppercase tracking-widest text-muted">{stat.label}</p>
+            <p class="mt-2 text-sm leading-6 text-muted/75">{stat.detail}</p>
+          </div>
         </article>
       ))}
     </div>

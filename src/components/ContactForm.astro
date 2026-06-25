@@ -1,41 +1,102 @@
-<section id="contact" class="bg-surface py-24">
-  <div class="contact-container">
-    <div class="grid gap-12 md:grid-cols-5">
-      <div class="md:col-span-2">
-        <p class="eyebrow mb-3">05 — Start a Project</p>
-        <h2 class="section-title mb-6">Tell us what you need to stamp.</h2>
-        <p class="text-base">
+---
+const contactDetails = [
+  { label: "Phone", value: "(231) 796-3593", href: "tel:+12317963593" },
+  { label: "Fax", value: "(231) 796-9066" },
+];
+
+const plants = [
+  { id: "01", region: "Big Rapids, MI", count: "3 facilities" },
+  { id: "02", region: "Mt. Sterling, KY", count: "2 facilities" },
+];
+
+const projectDetails = ["Part drawings", "Material spec", "Annual volume", "Secondary operations"];
+---
+
+<section id="contact" class="relative overflow-hidden bg-surface py-20 md:py-24">
+  <div class="absolute inset-x-0 top-0 h-px bg-line"></div>
+  <div class="absolute bottom-0 left-0 hidden h-48 w-1/3 border-r border-line bg-[linear-gradient(135deg,transparent_0,transparent_47%,rgb(255_255_255_/_0.04)_47%,rgb(255_255_255_/_0.04)_53%,transparent_53%,transparent_100%)] bg-[length:28px_28px] lg:block"></div>
+
+  <div class="site-container relative">
+    <div class="grid gap-10 lg:grid-cols-[minmax(0,0.72fr)_minmax(0,1fr)] lg:items-start">
+      <aside>
+        <p class="eyebrow mb-4">05 — Start a Project</p>
+        <h2 class="section-title mb-6 max-w-xl">Tell us what you need to stamp.</h2>
+        <p class="max-w-xl text-base leading-7 text-muted md:text-lg">
           Share your project details, press requirements, or product questions and the team will route your inquiry.
         </p>
+
+        <div class="mt-10 grid gap-px border border-line bg-line sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2">
+          {contactDetails.map((item) => (
+            <div class="bg-surface p-6">
+              <p class="eyebrow mb-3 text-primary">{item.label}</p>
+              {item.href ? (
+                <a href={item.href} class="text-2xl font-bold text-foreground transition hover:text-primary">{item.value}</a>
+              ) : (
+                <p class="text-2xl font-bold text-foreground">{item.value}</p>
+              )}
+            </div>
+          ))}
+        </div>
+
+        <div class="mt-6 border border-line">
+          <div class="border-b border-line p-5">
+            <p class="eyebrow text-muted">Production Footprint</p>
+          </div>
+          <div class="grid gap-px bg-line sm:grid-cols-2">
+            {plants.map((plant) => (
+              <div class="bg-surface p-5">
+                <p class="mb-5 text-sm font-semibold text-primary">{plant.id}</p>
+                <h3 class="text-xl font-bold text-foreground">{plant.region}</h3>
+                <p class="mt-2 text-sm uppercase tracking-[0.16em] text-muted">{plant.count}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </aside>
+
+      <div class="border border-line bg-background">
+        <div class="grid gap-px bg-line md:grid-cols-[1fr_220px]">
+          <form id="contactForm" class="space-y-5 bg-background p-6 md:p-8 lg:p-10">
+            <input type="text" name="website" tabindex="-1" autocomplete="off" class="hidden" aria-hidden="true" />
+
+            <div>
+              <label class="eyebrow mb-2 block" for="name">Name</label>
+              <input id="name" type="text" name="name" required class="w-full border border-transparent bg-foreground px-4 py-3 text-background" />
+            </div>
+
+            <div class="grid gap-5 md:grid-cols-2">
+              <div>
+                <label class="eyebrow mb-2 block" for="email">Email</label>
+                <input id="email" type="email" name="email" required class="w-full border border-transparent bg-foreground px-4 py-3 text-background" />
+              </div>
+              <div>
+                <label class="eyebrow mb-2 block" for="phone">Phone</label>
+                <input id="phone" type="tel" name="phone" class="w-full border border-transparent bg-foreground px-4 py-3 text-background" />
+              </div>
+            </div>
+
+            <div>
+              <label class="eyebrow mb-2 block" for="message">Message</label>
+              <textarea id="message" name="message" rows="6" required class="w-full border border-transparent bg-foreground px-4 py-3 text-background"></textarea>
+            </div>
+
+            <button type="submit" class="btn-red w-full py-4">Send Inquiry →</button>
+            <p id="formStatus" class="form-status text-sm" role="status" hidden></p>
+          </form>
+
+          <div class="bg-surface p-6 md:p-8">
+            <p class="eyebrow mb-6 text-primary">Helpful Details</p>
+            <div class="space-y-5">
+              {projectDetails.map((detail, index) => (
+                <div class="border-b border-line pb-5 last:border-b-0 last:pb-0">
+                  <p class="mb-2 text-xs font-semibold text-primary">0{index + 1}</p>
+                  <p class="text-sm font-semibold uppercase tracking-[0.16em] text-foreground">{detail}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
       </div>
-
-      <form id="contactForm" class="space-y-5 border border-line bg-background p-8 md:col-span-3 md:p-10">
-        <input type="text" name="website" tabindex="-1" autocomplete="off" class="hidden" aria-hidden="true" />
-
-        <div>
-          <label class="eyebrow mb-2 block" for="name">Name</label>
-          <input id="name" type="text" name="name" required class="w-full bg-foreground px-4 py-3 text-background" />
-        </div>
-
-        <div class="grid gap-5 md:grid-cols-2">
-          <div>
-            <label class="eyebrow mb-2 block" for="email">Email</label>
-            <input id="email" type="email" name="email" required class="w-full bg-foreground px-4 py-3 text-background" />
-          </div>
-          <div>
-            <label class="eyebrow mb-2 block" for="phone">Phone</label>
-            <input id="phone" type="tel" name="phone" class="w-full bg-foreground px-4 py-3 text-background" />
-          </div>
-        </div>
-
-        <div>
-          <label class="eyebrow mb-2 block" for="message">Message</label>
-          <textarea id="message" name="message" rows="4" required class="w-full bg-foreground px-4 py-3 text-background"></textarea>
-        </div>
-
-        <button type="submit" class="btn-red w-full py-4">Send Inquiry →</button>
-        <p id="formStatus" class="form-status text-sm" role="status" hidden></p>
-      </form>
     </div>
   </div>
 </section>

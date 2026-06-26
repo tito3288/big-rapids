@@ -1,8 +1,9 @@
 <section id="careers" class="relative h-[600px] overflow-hidden">
   <img
+    data-careers-parallax
     src="/images/image-4.jpg"
     alt="Big Rapids Products team member at work"
-    class="absolute inset-0 h-full w-full object-cover"
+    class="careers-parallax-image absolute inset-x-0 top-[-12%] h-[124%] w-full object-cover will-change-transform"
   />
   <div class="careers-overlay absolute inset-0"></div>
   <div class="site-container relative z-10 flex h-full flex-col justify-center">
@@ -16,3 +17,49 @@
     <a href="#contact" class="ghost-button mt-8 w-fit px-8 py-4">Contact Careers →</a>
   </div>
 </section>
+
+<style>
+  .careers-parallax-image {
+    object-position: center;
+  }
+
+  @media (max-width: 767px) {
+    .careers-parallax-image {
+      object-position: 78% center;
+    }
+  }
+</style>
+
+<script>
+  const careersSection = document.getElementById("careers");
+  const careersImage = careersSection?.querySelector("[data-careers-parallax]");
+  const reduceCareersMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+  let careersParallaxFrame = 0;
+
+  const updateCareersParallax = () => {
+    careersParallaxFrame = 0;
+
+    if (!careersSection || !(careersImage instanceof HTMLElement) || reduceCareersMotion.matches) return;
+
+    const rect = careersSection.getBoundingClientRect();
+    const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
+
+    if (rect.bottom < 0 || rect.top > viewportHeight) return;
+
+    const progress = (viewportHeight - rect.top) / (viewportHeight + rect.height);
+    const parallaxRange = window.matchMedia("(max-width: 767px)").matches ? 34 : 56;
+    const offset = (progress - 0.5) * parallaxRange;
+    careersImage.style.transform = `translate3d(0, ${offset}px, 0)`;
+  };
+
+  const requestCareersParallax = () => {
+    if (careersParallaxFrame) return;
+    careersParallaxFrame = window.requestAnimationFrame(updateCareersParallax);
+  };
+
+  if (careersSection && careersImage instanceof HTMLElement && !reduceCareersMotion.matches) {
+    updateCareersParallax();
+    window.addEventListener("scroll", requestCareersParallax, { passive: true });
+    window.addEventListener("resize", requestCareersParallax);
+  }
+</script>

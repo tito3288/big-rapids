@@ -111,6 +111,15 @@ a {
   right: 0;
 }
 
+@media (max-width: 640px) {
+  .hero-title .underline-red::after {
+    bottom: 0.03em;
+    height: 0.065em;
+    left: 0.03em;
+    right: 0.12em;
+  }
+}
+
 .hero-overlay {
   background: linear-gradient(
     180deg,
@@ -217,5 +226,9 @@ textarea:focus-visible {
     opacity: 1;
     transform: none;
     transition: none;
+  }
+
+  .hero-video {
+    display: none;
   }
 }

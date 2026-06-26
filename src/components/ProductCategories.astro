@@ -3,41 +3,46 @@ const products = [
   {
     title: "Structural Components",
     index: "01",
-    image: "/images/image-2.jpg",
-    alt: "Structural components",
+    image: "/images/product-structural.jpg",
+    alt: "Robotic press cell forming a structural component",
     className: "md:col-span-3 h-80",
+    imageClass: "object-center",
     heading: "text-2xl",
   },
   {
     title: "Decorative Trim",
     index: "02",
-    image: "/images/image-3.jpg",
-    alt: "Decorative trim",
+    image: "/images/product-decorative-trim.jpg",
+    alt: "Operator handling decorative trim parts at a press line",
     className: "md:col-span-3 h-80",
+    imageClass: "object-center",
     heading: "text-2xl",
   },
   {
     title: "Exhaust Parts",
     index: "03",
-    image: "/images/image-1.jpg",
-    alt: "Exhaust parts",
+    image: "/images/product-exhaust-parts.jpg",
+    alt: "Gloved operator positioning a formed exhaust part in a fixture",
     className: "md:col-span-2 h-72",
+    imageClass: "object-center",
     heading: "text-xl",
   },
   {
     title: "Wheel Claddings",
     index: "04",
-    image: "/images/image-2.jpg",
-    alt: "Wheel claddings",
+    image: "/images/product-wheel-claddings.jpg",
+    alt: "Laser welding sparks during metal forming work",
     className: "md:col-span-2 h-72",
+    imageClass: "object-center",
     heading: "text-xl",
   },
   {
     title: "EV · Appliance · Building",
     index: "05",
-    image: "/images/image-3.jpg",
-    alt: "EV appliance and building products",
+    image: "/images/product-ev-appliance-building.jpg",
+    alt: "Welder assembling a metal component with sparks",
     className: "md:col-span-2 h-72",
+    imageClass: "object-center",
     heading: "text-xl",
   },
 ];
@@ -53,7 +58,10 @@ const products = [
           <img
             src={product.image}
             alt={product.alt}
-            class="duotone h-full w-full object-cover transition duration-700 group-hover:scale-105"
+            class:list={[
+              product.imageClass,
+              "duotone h-full w-full object-cover transition duration-700 group-hover:scale-105",
+            ]}
           />
           <div class="card-overlay absolute inset-0"></div>
           <div class="absolute bottom-6 left-6">

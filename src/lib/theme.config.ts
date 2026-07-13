@@ -10,6 +10,10 @@ export const theme = {
     line: "rgb(255 255 255 / 0.1)",
     chip: "rgb(255 255 255 / 0.3)",
     logoPlate: "rgb(255 255 255 / 0.95)",
+    paper: "#FFFFFF",
+    ink: "#0D111E",
+    paperMuted: "#515762",
+    paperLine: "rgb(13 17 30 / 0.14)",
   },
   fonts: {
     heading: "'Inter', system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif",

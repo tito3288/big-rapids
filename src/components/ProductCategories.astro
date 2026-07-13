@@ -2,6 +2,7 @@
 const products = [
   {
     title: "Structural Components",
+    href: "/products#structural-components",
     index: "01",
     image: "/images/product-structural.jpg",
     alt: "Robotic press cell forming a structural component",
@@ -10,7 +11,8 @@ const products = [
     heading: "text-2xl",
   },
   {
-    title: "Decorative Trim",
+    title: "Class A Trim",
+    href: "/products#class-a-trim",
     index: "02",
     image: "/images/product-decorative-trim.jpg",
     alt: "Operator handling decorative trim parts at a press line",
@@ -20,6 +22,7 @@ const products = [
   },
   {
     title: "Exhaust Parts",
+    href: "/products#exhaust-components",
     index: "03",
     image: "/images/product-exhaust-parts.jpg",
     alt: "Gloved operator positioning a formed exhaust part in a fixture",
@@ -28,7 +31,8 @@ const products = [
     heading: "text-xl",
   },
   {
-    title: "Wheel Claddings",
+    title: "Class A Wheel Cladding",
+    href: "/products#wheel-cladding",
     index: "04",
     image: "/images/product-wheel-claddings.jpg",
     alt: "Laser welding sparks during metal forming work",
@@ -38,6 +42,7 @@ const products = [
   },
   {
     title: "EV · Appliance · Building",
+    href: "/products#ev-industrial",
     index: "05",
     image: "/images/product-ev-appliance-building.jpg",
     alt: "Welder assembling a metal component with sparks",
@@ -54,7 +59,11 @@ const products = [
     <h2 class="section-title mb-12 max-w-2xl">From decorative trim to structural assemblies.</h2>
     <div class="grid grid-cols-1 gap-4 md:grid-cols-6">
       {products.map((product) => (
-        <article class:list={[product.className, "group relative overflow-hidden"]}>
+        <a
+          href={product.href}
+          class:list={[product.className, "product-card group relative overflow-hidden"]}
+          aria-label={`Explore ${product.title}`}
+        >
           <img
             src={product.image}
             alt={product.alt}
@@ -68,8 +77,15 @@ const products = [
             <p class="eyebrow mb-1 text-primary">{product.index}</p>
             <h3 class:list={[product.heading, "font-semibold text-foreground"]}>{product.title}</h3>
           </div>
-        </article>
+        </a>
       ))}
     </div>
   </div>
 </section>
+
+<style>
+  .product-card:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 4px;
+  }
+</style>

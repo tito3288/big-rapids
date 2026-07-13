@@ -11,6 +11,10 @@
   --color-line: rgb(255 255 255 / 0.1);
   --color-chip: rgb(255 255 255 / 0.3);
   --color-logo-plate: rgb(255 255 255 / 0.95);
+  --color-paper: #FFFFFF;
+  --color-ink: #0D111E;
+  --color-paper-muted: #515762;
+  --color-paper-line: rgb(13 17 30 / 0.14);
   --font-heading: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   --font-body: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   --radius-sm: 0.125rem;

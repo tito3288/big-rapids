@@ -1,0 +1,301 @@
+---
+import SiteLayout from "../layouts/SiteLayout.astro";
+import MediaPlaceholder from "../components/MediaPlaceholder.astro";
+
+const title = "About Big Rapids Products | Precision Manufacturing Partner";
+const description =
+  "Founded in 1977, Big Rapids Products provides precision metal stampings, welded assemblies, and engineered manufacturing solutions from five facilities in Michigan and Kentucky.";
+
+const companyProofs = [
+  { value: "1977", label: "Founded" },
+  { value: "5", label: "Manufacturing Facilities" },
+  { value: "2", label: "States" },
+];
+
+const manufacturingScope = [
+  {
+    number: "01",
+    title: "Engineered Manufacturing",
+    copy: "Precision metal stamping, robotic welding, assembly, deep draw manufacturing, Class A components, structural parts, and battery components support demanding production programs.",
+  },
+  {
+    number: "02",
+    title: "Customer Partnership",
+    copy: "Engineering, tooling, automation, and manufacturing teams work with customers to improve manufacturability, solve production challenges, and reduce program risk.",
+  },
+];
+
+const commitments = [
+  {
+    number: "01",
+    title: "Engineering Collaboration",
+    copy: "Connect product requirements with practical manufacturing decisions early in the program.",
+  },
+  {
+    number: "02",
+    title: "Continuous Improvement",
+    copy: "Strengthen products and processes through disciplined review, learning, and refinement.",
+  },
+  {
+    number: "03",
+    title: "Dependable Execution",
+    copy: "Support launches and ongoing production with responsive communication and accountable delivery.",
+  },
+  {
+    number: "04",
+    title: "Customer Confidence",
+    copy: "Build trust through consistent quality, reliable performance, and long-term manufacturing support.",
+  },
+];
+
+const locations = [
+  {
+    number: "03",
+    region: "Michigan",
+    city: "Big Rapids, MI",
+    copy: "Three facilities supporting corporate, manufacturing, tooling, and assembly operations.",
+  },
+  {
+    number: "02",
+    region: "Kentucky",
+    city: "Mount Sterling, KY",
+    copy: "Two manufacturing facilities supporting stamping and assembly programs.",
+  },
+];
+
+const qualityProofs = [
+  {
+    title: "IATF 16949:2016",
+    copy: "A certified quality-management system aligned with automotive manufacturing requirements.",
+  },
+  {
+    title: "PPAP Validation",
+    copy: "Production-part approval and process information support launch readiness and customer requirements.",
+  },
+  {
+    title: "CMM Inspection",
+    copy: "Dimensional inspection verifies components against CAD data and blueprint requirements.",
+  },
+  {
+    title: "Process Capability",
+    copy: "Statistical process information helps maintain control and consistency throughout production.",
+  },
+];
+---
+
+<SiteLayout title={title} description={description} canonicalPath="/about/" socialImage="/images/image-1.jpg">
+  <section id="top" class="relative overflow-hidden border-b border-line bg-background pb-20 pt-44 text-muted sm:pb-24 sm:pt-52 lg:pt-56">
+    <div class="pointer-events-none absolute -right-16 top-24 hidden text-[24rem] font-black leading-none text-foreground/[0.025] xl:block" aria-hidden="true">
+      77
+    </div>
+
+    <div class="site-container relative z-10 grid items-start gap-14 lg:grid-cols-[minmax(0,1.08fr)_minmax(23rem,0.92fr)] lg:gap-16">
+      <div class="min-w-0">
+        <p class="eyebrow text-primary">About · Founded 1977</p>
+        <h1 class="hero-title mt-7 max-w-5xl text-[clamp(2.4rem,5.6vw,5.35rem)]">
+          Manufacturing confidence, built over nearly five decades.
+        </h1>
+        <p class="mt-8 max-w-3xl text-lg leading-relaxed text-foreground sm:text-xl">
+          Big Rapids Products is a trusted manufacturing partner to automotive OEMs, Tier 1 customers, and industrial manufacturers that require precision, reliability, and dependable execution.
+        </p>
+        <p class="mt-5 max-w-3xl text-base leading-relaxed sm:text-lg">
+          From five facilities across Michigan and Kentucky, we deliver engineered metal stampings, welded assemblies, and automated manufacturing solutions that support successful launches and scalable production.
+        </p>
+        <div class="mt-10 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+          <a class="btn-red w-full px-7 py-4 text-center sm:w-auto" href="#our-story">Explore Our Story ↓</a>
+          <a class="ghost-button w-full px-7 py-4 text-center sm:w-auto" href="/#contact">Start a Project</a>
+        </div>
+      </div>
+
+      <aside class="border-l border-t border-line" aria-label="Company overview">
+        <div class="border-b border-r border-line p-6 sm:p-7">
+          <p class="text-xs font-black uppercase tracking-[0.24em] text-primary">Established</p>
+          <p class="mt-4 text-[clamp(4rem,8vw,7.5rem)] font-black leading-none tracking-[-0.06em] text-foreground">1977</p>
+          <p class="mt-5 max-w-md leading-relaxed">A reputation shaped by quality products, responsive partnership, and consistent manufacturing performance.</p>
+        </div>
+        <div class="grid grid-cols-2">
+          {companyProofs.slice(1).map((proof) => (
+            <div class="min-w-0 border-b border-r border-line p-4 sm:p-7">
+              <p class="text-4xl font-black leading-none tracking-[-0.04em] text-foreground">{proof.value}</p>
+              <p class="mt-4 break-words text-[0.6rem] font-black uppercase tracking-[0.12em] sm:text-[0.68rem] sm:tracking-[0.18em]">{proof.label}</p>
+            </div>
+          ))}
+        </div>
+        <div class="border-b border-r border-line p-6 sm:p-7">
+          <p class="text-xs font-black uppercase tracking-[0.22em] text-muted">Our Promise</p>
+          <p class="mt-4 text-xl font-bold leading-snug text-foreground">Deliver quality products. Deliver them on time. Deliver confidence.</p>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <section id="our-story" class="scroll-mt-20 bg-paper py-20 text-paper-muted sm:py-24 lg:py-28">
+    <div class="site-container">
+      <div class="grid gap-7 border-b border-paper-line pb-12 md:grid-cols-[8rem_1fr] md:gap-10 lg:grid-cols-[8rem_minmax(0,1fr)_minmax(21rem,0.72fr)]">
+        <p class="text-xs font-black uppercase tracking-[0.24em] text-primary">01 · Company</p>
+        <div>
+          <p class="text-xs font-black uppercase tracking-[0.22em]">About Big Rapids Products</p>
+          <h2 class="mt-5 max-w-4xl text-[clamp(2.6rem,4.7vw,4.7rem)] font-bold leading-[0.98] tracking-[-0.04em] text-ink">
+            More than a parts supplier.
+          </h2>
+        </div>
+        <div class="space-y-5 md:col-start-2 lg:col-start-auto">
+          <p class="text-lg leading-relaxed">
+            Founded in 1977, Big Rapids Products has grown into a connected manufacturing organization serving demanding automotive and industrial programs across North America.
+          </p>
+          <p class="leading-relaxed">
+            Our teams combine manufacturing knowledge, advanced automation, and disciplined execution to help customers move from early program decisions through stable production.
+          </p>
+        </div>
+      </div>
+
+      <div class="mt-14 grid items-start gap-10 lg:grid-cols-[minmax(0,1.08fr)_minmax(22rem,0.92fr)] lg:gap-14">
+        <MediaPlaceholder
+          slotId="01"
+          label="Company Story"
+          suggestedSubject="A wide historical or present-day plant image showing the Big Rapids Products manufacturing environment and sense of scale."
+          aspect="panoramic"
+          tone="light"
+          class="min-w-0 w-full"
+        />
+
+        <div class="grid border-l border-t border-paper-line">
+          {manufacturingScope.map((item) => (
+            <article class="grid gap-5 border-b border-r border-paper-line p-6 sm:grid-cols-[3rem_1fr] sm:p-7">
+              <p class="text-xs font-black tracking-[0.18em] text-primary">{item.number}</p>
+              <div>
+                <h3 class="text-2xl font-bold text-ink">{item.title}</h3>
+                <p class="mt-4 leading-relaxed">{item.copy}</p>
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-secondary py-20 text-foreground sm:py-24 lg:py-28">
+    <div class="site-container">
+      <div class="grid grid-cols-[minmax(0,1fr)] items-start gap-12 lg:grid-cols-[minmax(0,1.05fr)_minmax(22rem,0.95fr)] lg:gap-16">
+        <div>
+          <p class="text-xs font-black uppercase tracking-[0.24em] text-foreground/65">02 · Our Commitment</p>
+          <h2 class="mt-6 max-w-4xl text-[clamp(2.25rem,5vw,5rem)] font-bold leading-[0.96] tracking-[-0.04em]">
+            Quality, delivery, and responsiveness—without compromise.
+          </h2>
+          <p class="mt-7 max-w-3xl text-lg leading-relaxed text-foreground/80">
+            Continuous improvement is at the core of how Big Rapids Products works. We are committed to exceeding customer expectations through engineering-driven solutions, defect-free manufacturing, and dependable execution.
+          </p>
+          <p class="mt-5 max-w-3xl leading-relaxed text-foreground/75">
+            The mission is straightforward: help customers succeed by delivering exceptional manufacturing performance on time, every time.
+          </p>
+        </div>
+
+        <MediaPlaceholder
+          slotId="02"
+          label="People & Process"
+          suggestedSubject="Engineering and manufacturing team members collaborating on the plant floor or reviewing a production program."
+          aspect="panoramic"
+          tone="oxblood"
+          class="min-w-0 w-full"
+        />
+      </div>
+
+      <div class="mt-12 grid border-l border-t border-foreground/20 sm:grid-cols-2 xl:grid-cols-4">
+        {commitments.map((commitment) => (
+          <article class="border-b border-r border-foreground/20 p-6 sm:p-7">
+            <p class="text-xs font-black tracking-[0.18em] text-foreground/55">{commitment.number}</p>
+            <h3 class="mt-8 text-xl font-bold">{commitment.title}</h3>
+            <p class="mt-4 leading-relaxed text-foreground/75">{commitment.copy}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="border-y border-line bg-surface py-20 text-muted sm:py-24 lg:py-28">
+    <div class="site-container">
+      <div class="grid gap-7 border-b border-line pb-12 md:grid-cols-[8rem_1fr] md:gap-10 lg:grid-cols-[8rem_minmax(0,1fr)_minmax(20rem,0.65fr)]">
+        <p class="text-xs font-black uppercase tracking-[0.24em] text-primary">03 · Footprint</p>
+        <div>
+          <p class="eyebrow">Michigan & Kentucky</p>
+          <h2 class="section-title mt-5 max-w-4xl">Five facilities. One connected manufacturing partner.</h2>
+        </div>
+        <p class="text-lg leading-relaxed md:col-start-2 lg:col-start-auto">
+          A multi-facility footprint provides the manufacturing capacity, specialized operations, and team coordination required to support production programs at scale.
+        </p>
+      </div>
+
+      <div class="mt-14 grid items-start gap-10 lg:grid-cols-[minmax(22rem,0.9fr)_minmax(0,1.1fr)] lg:gap-14">
+        <div class="grid border-l border-t border-line sm:grid-cols-2">
+          {locations.map((location) => (
+            <article class="border-b border-r border-line p-6 sm:p-7">
+              <p class="text-[clamp(3.5rem,7vw,6.5rem)] font-black leading-none tracking-[-0.06em] text-foreground">{location.number}</p>
+              <p class="mt-5 text-xs font-black uppercase tracking-[0.2em] text-primary">{location.region}</p>
+              <h3 class="mt-3 text-2xl font-bold text-foreground">{location.city}</h3>
+              <p class="mt-5 leading-relaxed">{location.copy}</p>
+            </article>
+          ))}
+        </div>
+
+        <MediaPlaceholder
+          slotId="03"
+          label="Manufacturing Footprint"
+          suggestedSubject="A wide facility exterior, multi-building campus, or active plant-floor view representing BRP's Michigan and Kentucky footprint."
+          aspect="panoramic"
+          tone="dark"
+          class="min-w-0 w-full"
+        />
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-paper py-20 text-paper-muted sm:py-24 lg:py-28">
+    <div class="site-container">
+      <div class="grid gap-7 border-b border-paper-line pb-12 md:grid-cols-[8rem_1fr] md:gap-10 lg:grid-cols-[8rem_minmax(0,1fr)_minmax(21rem,0.72fr)]">
+        <p class="text-xs font-black uppercase tracking-[0.24em] text-primary">04 · Quality</p>
+        <div>
+          <p class="text-xs font-black uppercase tracking-[0.22em]">Producing Quality</p>
+          <h2 class="mt-5 max-w-4xl text-[clamp(2.6rem,4.7vw,4.7rem)] font-bold leading-[0.98] tracking-[-0.04em] text-ink">
+            Quality is the most important product we manufacture.
+          </h2>
+        </div>
+        <p class="text-lg leading-relaxed md:col-start-2 lg:col-start-auto">
+          Certified systems, dimensional validation, and process-capability controls help reduce risk and maintain confidence throughout the life of a program.
+        </p>
+      </div>
+
+      <div class="mt-12 grid border-l border-t border-paper-line sm:grid-cols-2 xl:grid-cols-4">
+        {qualityProofs.map((proof, index) => (
+          <article class="border-b border-r border-paper-line p-6 sm:p-7">
+            <p class="text-xs font-black tracking-[0.18em] text-primary">0{index + 1}</p>
+            <h3 class="mt-8 text-xl font-bold text-ink">{proof.title}</h3>
+            <p class="mt-4 leading-relaxed">{proof.copy}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="relative overflow-hidden border-t border-line bg-background py-20 text-muted sm:py-24 lg:py-28">
+    <div class="pointer-events-none absolute -bottom-24 right-0 text-[22rem] font-black leading-none text-foreground/[0.025]" aria-hidden="true">
+      77
+    </div>
+    <div class="site-container relative z-10">
+      <p class="eyebrow text-primary">Built to Deliver</p>
+      <div class="mt-7 border-t border-line pt-10">
+        <div class="max-w-5xl">
+          <h2 class="text-[clamp(2.6rem,4.5vw,4.5rem)] font-bold leading-[0.98] tracking-[-0.04em] text-foreground">
+            Deliver quality products. Deliver them on time. Deliver confidence.
+          </h2>
+          <p class="mt-6 max-w-3xl text-lg leading-relaxed">
+            Bring your next program to a manufacturing team built around engineering collaboration, continuous improvement, and dependable execution.
+          </p>
+          <div class="mt-9 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+            <a class="btn-red w-full px-7 py-5 text-center sm:w-auto" href="/#contact">Start a Project</a>
+            <a class="ghost-button w-full px-7 py-5 text-center sm:w-auto" href="/capabilities">Explore Capabilities</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</SiteLayout>

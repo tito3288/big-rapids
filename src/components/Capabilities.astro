@@ -27,7 +27,15 @@ const stats = [
   },
 ];
 
-const services = ["Tool Design", "Prototypes", "Engineering", "Manufacturing", "Roll Forming", "Assembly & Welding"];
+const services = [
+  "Tool Design",
+  "Prototypes",
+  "Engineering",
+  "Metal Stamping",
+  "Roll Forming",
+  "Robotic Welding",
+  "Engineered Assemblies",
+];
 ---
 
 <section id="capabilities" class="border-t border-line py-20 md:py-24">
@@ -35,11 +43,12 @@ const services = ["Tool Design", "Prototypes", "Engineering", "Manufacturing", "
     <div class="mb-12 grid gap-8 lg:mb-16 lg:grid-cols-[minmax(0,0.95fr)_minmax(320px,0.55fr)] lg:items-end">
       <div>
         <p class="eyebrow mb-3">01 — Capabilities</p>
-        <h2 class="section-title max-w-3xl">Built for complex stampings and welded assemblies.</h2>
+        <h2 class="section-title max-w-3xl">Built for complex stampings. Engineered to reduce risk.</h2>
       </div>
       <div class="max-w-xl lg:justify-self-end">
         <p class="text-base leading-7 text-muted md:text-lg">
-          A full spectrum of services from tooling design and prototypes to engineering, manufacturing, roll forming, assembly and welding.
+          From tooling design and prototypes through engineering, metal stamping, robotic welding, and assembly, our
+          integrated capabilities support dependable production from concept through launch.
         </p>
         <div class="mt-6 flex flex-wrap gap-2">
           {services.map((service) => (

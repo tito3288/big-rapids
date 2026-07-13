@@ -1,7 +1,7 @@
 ---
-import "../styles/global.css";
-import Header from "../components/Header.astro";
+import SiteLayout from "../layouts/SiteLayout.astro";
 import Hero from "../components/Hero.astro";
+import PositioningIntro from "../components/PositioningIntro.astro";
 import Capabilities from "../components/Capabilities.astro";
 import Materials from "../components/Materials.astro";
 import ProductCategories from "../components/ProductCategories.astro";
@@ -9,107 +9,20 @@ import Certifications from "../components/Certifications.astro";
 import Footprint from "../components/Footprint.astro";
 import Careers from "../components/Careers.astro";
 import ContactForm from "../components/ContactForm.astro";
-import Footer from "../components/Footer.astro";
 
-const title = "Big Rapids Products — Metal Forming Excellence";
+const title = "Precision Metal Stamping & Assembly Solutions | Big Rapids Products";
 const description =
-  "Big Rapids Products supplies metal stampings and welded assemblies from five facilities across Michigan and Kentucky.";
+  "Precision metal stamping, robotic welding, and engineered assemblies for automotive OEMs, Tier 1 customers, and industrial manufacturers.";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
-		<meta name="description" content={description} />
-		<link rel="canonical" href="https://big-rapids.pages.dev/" />
-		<meta property="og:title" content={title} />
-		<meta property="og:description" content={description} />
-		<meta property="og:type" content="website" />
-		<meta property="og:url" content="https://big-rapids.pages.dev/" />
-		<meta property="og:image" content="/images/image-4.jpg" />
-		<link rel="preconnect" href="https://fonts.googleapis.com" />
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
-	</head>
-	<body>
-		<Header />
-		<main>
-			<Hero />
-			<Capabilities />
-			<Materials />
-			<ProductCategories />
-			<Certifications />
-			<Footprint />
-			<Careers />
-			<ContactForm />
-		</main>
-		<Footer />
-		<script>
-			const revealSelectors = [
-				"#top .eyebrow",
-				"#top .hero-title",
-				"#top .site-container > div",
-				"main section:not(#top) .site-container > p.eyebrow",
-				"main section:not(#top) .site-container > h2",
-				"main section:not(#top) .site-container > div",
-				"main section article",
-				"main section form",
-				"main section .btn-red",
-				"main section .ghost-button",
-			];
-
-			const setupScrollReveal = () => {
-				const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-				const targets = Array.from(new Set(revealSelectors.flatMap((selector) => Array.from(document.querySelectorAll(selector)))))
-					.filter((target): target is HTMLElement => target instanceof HTMLElement && !target.closest("header"));
-
-				if (!targets.length) return;
-
-				document.documentElement.classList.add("reveal-ready");
-
-				const sectionCounts = new Map<Element, number>();
-
-				targets.forEach((target) => {
-					const section = target.closest("section, footer") ?? document.body;
-					const count = sectionCounts.get(section) ?? 0;
-
-					sectionCounts.set(section, count + 1);
-					target.dataset.reveal = "";
-					target.style.setProperty("--reveal-delay", `${Math.min(count, 5) * 80}ms`);
-				});
-
-				if (reduceMotion || !("IntersectionObserver" in window)) {
-					targets.forEach((target) => target.classList.add("is-visible"));
-					return;
-				}
-
-				const observer = new IntersectionObserver(
-					(entries) => {
-						entries.forEach((entry) => {
-							if (!entry.isIntersecting) return;
-
-							entry.target.classList.add("is-visible");
-							observer.unobserve(entry.target);
-						});
-					},
-					{
-						rootMargin: "0px 0px -12% 0px",
-						threshold: 0.14,
-					},
-				);
-
-				targets.forEach((target) => observer.observe(target));
-			};
-
-			if (document.readyState === "loading") {
-				document.addEventListener("DOMContentLoaded", setupScrollReveal, { once: true });
-			} else {
-				setupScrollReveal();
-			}
-		</script>
-	</body>
-</html>
+<SiteLayout title={title} description={description} canonicalPath="/" socialImage="/images/image-1.jpg">
+	<Hero />
+	<PositioningIntro />
+	<Capabilities />
+	<Materials />
+	<ProductCategories />
+	<Certifications />
+	<Footprint />
+	<Careers />
+	<ContactForm />
+</SiteLayout>

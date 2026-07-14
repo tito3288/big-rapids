@@ -1,0 +1,299 @@
+---
+import SiteLayout from "../layouts/SiteLayout.astro";
+
+const title = "Quality | Big Rapids Products";
+const description =
+  "IATF 16949-certified automotive quality systems, dimensional validation, PPAP support, and production monitoring from Big Rapids Products.";
+const certificationUrl =
+  "https://www.brproducts.com/wp-content/uploads/2024/10/Expires-9.15.2027.pdf";
+
+const verificationMethods = [
+  {
+    title: "Verify Critical Dimensions",
+    copy: "Part-specific inspection fixtures, an optical comparator, Coordinate Measuring Machines, and 3D laser scanning verify part dimensions against CAD data and blueprint requirements.",
+  },
+  {
+    title: "Prove Process Capability",
+    copy: "Statistical software within our Plex ERP system and CMM supports process-capability verification for PPAP and throughout the life of the program.",
+  },
+  {
+    title: "Maintain Production Control",
+    copy: "Plant-floor computers integrate with part gages and handheld measuring devices, providing database control that helps maintain tolerances across production runs.",
+  },
+];
+
+const qualitySystems = [
+  {
+    title: "IATF 16949:2016",
+    label: "Certified System",
+    copy: "A certified quality-management system aligned with the requirements of automotive manufacturing.",
+  },
+  {
+    title: "CMM Validation",
+    label: "Dimensional Confidence",
+    copy: "Coordinate measurement verifies critical geometry against customer CAD data and blueprint requirements.",
+  },
+  {
+    title: "3D Laser Scanning",
+    label: "Advanced Inspection",
+    copy: "Digital surface and dimensional data supports thorough validation of manufactured components.",
+  },
+  {
+    title: "PPAP",
+    label: "Launch Readiness",
+    copy: "Production-part approval and capability information support customer requirements and successful launches.",
+  },
+  {
+    title: "Automated Monitoring",
+    label: "In-Process Control",
+    copy: "Connected production data helps teams monitor manufacturing performance as work moves through the plant.",
+  },
+  {
+    title: "Real-Time Analytics",
+    label: "Lifecycle Consistency",
+    copy: "Production analytics help maintain process control and consistent performance throughout the life of a program.",
+  },
+];
+---
+
+<SiteLayout title={title} description={description} canonicalPath="/quality/" socialImage="/images/product-structural.jpg">
+  <section id="top" class="relative overflow-hidden border-b border-line bg-background pb-20 pt-44 text-muted sm:pb-24 sm:pt-52 lg:pt-56">
+    <div class="pointer-events-none absolute -right-24 top-24 hidden text-[18rem] font-black leading-none text-foreground/[0.025] xl:block" aria-hidden="true">
+      QUALITY
+    </div>
+
+    <div class="site-container relative z-10 grid items-start gap-14 lg:grid-cols-[minmax(0,1.08fr)_minmax(23rem,0.92fr)] lg:gap-16">
+      <div class="min-w-0">
+        <p class="eyebrow text-primary">Quality Systems · IATF 16949:2016</p>
+        <h1 class="hero-title mt-7 max-w-5xl text-[clamp(3rem,6vw,5.75rem)]">
+          Producing Quality. Delivering Confidence.
+        </h1>
+        <p class="mt-8 max-w-3xl text-xl font-bold leading-relaxed text-foreground sm:text-2xl">
+          Quality is the most important product we manufacture.
+        </p>
+        <p class="mt-6 max-w-3xl text-base leading-relaxed sm:text-lg">
+          Automotive OEMs and Tier 1 suppliers trust Big Rapids Products because our IATF 16949-certified quality systems are built to reduce risk, support successful launches, and ensure consistent performance throughout the life of every program.
+        </p>
+        <div class="mt-10 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+          <a class="btn-red w-full px-7 py-4 text-center sm:w-auto" href="#verification">Explore Our Quality Systems ↓</a>
+          <a
+            class="ghost-button w-full px-7 py-4 text-center sm:w-auto"
+            href={certificationUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+          >View IATF Certificate ↗</a>
+        </div>
+      </div>
+
+      <aside class="inspection-grid relative min-h-[29rem] overflow-hidden border border-line bg-surface" aria-label="Quality system overview">
+        <div class="quality-reticle" aria-hidden="true">
+          <span></span>
+        </div>
+        <div class="absolute left-0 right-0 top-0 flex items-center justify-between border-b border-line px-5 py-4">
+          <p class="text-[0.65rem] font-black uppercase tracking-[0.24em] text-foreground">Dimensional Control</p>
+          <p class="text-[0.65rem] font-black uppercase tracking-[0.24em] text-primary">Verified</p>
+        </div>
+        <div class="absolute bottom-0 left-0 right-0 border-t border-line bg-background/90 p-6 backdrop-blur-sm sm:p-8">
+          <p class="text-xs font-black uppercase tracking-[0.24em] text-primary">Certified Quality System</p>
+          <p class="mt-4 text-[clamp(2.5rem,5vw,4.75rem)] font-black leading-none tracking-[-0.05em] text-foreground">IATF 16949</p>
+          <div class="mt-6 grid grid-cols-2 gap-px border border-line bg-line">
+            <div class="bg-background/95 p-4">
+              <p class="text-xs font-black uppercase tracking-[0.18em] text-muted">Scope</p>
+              <p class="mt-2 font-bold text-foreground">Stampings</p>
+            </div>
+            <div class="bg-background/95 p-4">
+              <p class="text-xs font-black uppercase tracking-[0.18em] text-muted">Scope</p>
+              <p class="mt-2 font-bold text-foreground">Welded Assemblies</p>
+            </div>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <section id="verification" class="scroll-mt-20 bg-paper py-20 text-paper-muted sm:py-24 lg:py-28">
+    <div class="site-container">
+      <div class="grid gap-7 border-b border-paper-line pb-12 md:grid-cols-[8rem_1fr] md:gap-10 lg:grid-cols-[8rem_minmax(0,1fr)_minmax(21rem,0.72fr)]">
+        <p class="text-xs font-black uppercase tracking-[0.24em] text-primary">Verification</p>
+        <div>
+          <p class="text-xs font-black uppercase tracking-[0.22em]">Measured Against Requirements</p>
+          <h2 class="mt-5 max-w-4xl text-[clamp(2.6rem,4.7vw,4.7rem)] font-bold leading-[0.98] tracking-[-0.04em] text-ink">
+            Quality is built into the process.
+          </h2>
+        </div>
+        <p class="text-lg leading-relaxed md:col-start-2 lg:col-start-auto">
+          Advanced inspection technology, statistical controls, and connected production information help verify critical dimensions and maintain confidence from PPAP through ongoing production.
+        </p>
+      </div>
+
+      <div class="mt-14 grid border-l border-t border-paper-line lg:grid-cols-3">
+        {verificationMethods.map((method) => (
+          <article class="group flex min-h-72 flex-col border-b border-r border-paper-line p-7 transition-colors hover:bg-ink hover:text-muted sm:p-8">
+            <div class="mb-10 flex items-center gap-3" aria-hidden="true">
+              <span class="size-3 border border-primary"></span>
+              <span class="h-px flex-1 bg-paper-line transition-colors group-hover:bg-line"></span>
+              <span class="size-1.5 bg-primary"></span>
+            </div>
+            <h3 class="text-2xl font-bold leading-tight text-ink transition-colors group-hover:text-foreground">{method.title}</h3>
+            <p class="mt-5 leading-relaxed">{method.copy}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="relative overflow-hidden bg-secondary py-20 text-foreground sm:py-24 lg:py-28">
+    <div class="pointer-events-none absolute -bottom-16 right-0 text-[16rem] font-black leading-none text-foreground/[0.04]" aria-hidden="true">
+      CONTROL
+    </div>
+    <div class="site-container relative z-10 grid items-start gap-12 lg:grid-cols-[minmax(18rem,0.55fr)_minmax(0,1.45fr)] lg:gap-16">
+      <div>
+        <p class="text-xs font-black uppercase tracking-[0.24em] text-foreground/65">Program Confidence</p>
+        <p class="mt-6 max-w-md text-lg leading-relaxed text-foreground/75">
+          Quality supports every stage of a production program—from validation and launch through repeatable, high-volume manufacturing.
+        </p>
+      </div>
+      <div>
+        <h2 class="max-w-5xl text-[clamp(3rem,6vw,6.5rem)] font-bold leading-[0.92] tracking-[-0.05em]">
+          Less risk.<br />Better launches.<br />Consistent results.
+        </h2>
+        <p class="mt-8 max-w-4xl text-lg leading-relaxed text-foreground/80">
+          Our quality systems are built to give purchasing, engineering, supplier-quality, and program teams clearer evidence that processes are capable, dimensions are verified, and production remains under control.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="border-y border-line bg-surface py-20 text-muted sm:py-24 lg:py-28">
+    <div class="site-container">
+      <div class="grid gap-7 md:grid-cols-[8rem_1fr] md:gap-10">
+        <p class="text-xs font-black uppercase tracking-[0.24em] text-primary">Systems</p>
+        <div>
+          <p class="eyebrow">Inspection · Validation · Monitoring</p>
+          <h2 class="section-title mt-5 max-w-4xl">The tools and controls behind dependable production.</h2>
+          <p class="mt-6 max-w-3xl text-lg leading-relaxed">
+            Inspection data and production information work together to support launch readiness, manufacturing quality, and long-term program performance.
+          </p>
+        </div>
+      </div>
+
+      <div class="mt-14 grid border-l border-t border-line sm:grid-cols-2 lg:grid-cols-3">
+        {qualitySystems.map((system) => (
+          <article class="border-b border-r border-line p-6 sm:p-8">
+            <p class="text-[0.65rem] font-black uppercase tracking-[0.22em] text-primary">{system.label}</p>
+            <h3 class="mt-5 text-2xl font-bold text-foreground">{system.title}</h3>
+            <p class="mt-4 leading-relaxed">{system.copy}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-paper py-20 text-paper-muted sm:py-24 lg:py-28">
+    <div class="site-container grid items-start gap-12 lg:grid-cols-[minmax(0,1.05fr)_minmax(22rem,0.95fr)] lg:gap-20">
+      <div>
+        <p class="text-xs font-black uppercase tracking-[0.24em] text-primary">Throughout the Program</p>
+        <h2 class="mt-6 max-w-4xl text-[clamp(2.7rem,5.2vw,5.25rem)] font-bold leading-[0.96] tracking-[-0.045em] text-ink">
+          From first approval to every production run.
+        </h2>
+        <p class="mt-7 max-w-3xl text-lg leading-relaxed">
+          CMM and Plex ERP statistical information help verify process capability for PPAP and throughout the life of a program. On the plant floor, connected gages and measuring devices provide database control to help ensure tolerances are maintained.
+        </p>
+      </div>
+
+      <aside class="border-l border-t border-paper-line" aria-label="Quality outcomes">
+        <div class="border-b border-r border-paper-line p-7 sm:p-8">
+          <p class="text-xs font-black uppercase tracking-[0.22em] text-primary">Launch</p>
+          <p class="mt-4 text-2xl font-bold text-ink">Validated dimensions and documented process capability.</p>
+        </div>
+        <div class="border-b border-r border-paper-line p-7 sm:p-8">
+          <p class="text-xs font-black uppercase tracking-[0.22em] text-primary">Production</p>
+          <p class="mt-4 text-2xl font-bold text-ink">Connected monitoring and repeatable inspection controls.</p>
+        </div>
+        <div class="border-b border-r border-paper-line p-7 sm:p-8">
+          <p class="text-xs font-black uppercase tracking-[0.22em] text-primary">Program Life</p>
+          <p class="mt-4 text-2xl font-bold text-ink">Consistent performance supported by real-time production data.</p>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <section class="relative overflow-hidden border-t border-line bg-background py-20 text-muted sm:py-24 lg:py-28">
+    <div class="site-container relative z-10">
+      <div class="grid gap-7 md:grid-cols-[8rem_1fr] md:gap-10">
+        <p class="text-xs font-black uppercase tracking-[0.24em] text-primary">Confidence</p>
+        <div>
+          <h2 class="section-title max-w-5xl">Bring your next program to a quality system built for automotive production.</h2>
+          <p class="mt-7 max-w-3xl text-lg leading-relaxed">
+            Connect with Big Rapids Products to discuss dimensional requirements, launch expectations, and production-quality needs.
+          </p>
+        </div>
+      </div>
+
+      <div class="mt-14 flex flex-col justify-between gap-8 border-t border-line pt-10 lg:flex-row lg:items-end">
+        <p class="max-w-4xl text-[clamp(2.2rem,4.5vw,4.6rem)] font-bold leading-[0.98] tracking-[-0.035em] text-foreground">
+          Quality you can verify. Performance you can trust.
+        </p>
+        <div class="flex w-full shrink-0 flex-col gap-3 sm:w-auto sm:flex-row sm:flex-wrap">
+          <a class="btn-red w-full px-8 py-5 text-center sm:w-auto" href="/#contact">Start a Project</a>
+          <a
+            class="ghost-button w-full px-7 py-5 text-center sm:w-auto"
+            href={certificationUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+          >View Certificate ↗</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</SiteLayout>
+
+<style>
+  .inspection-grid {
+    background-image:
+      linear-gradient(rgb(255 255 255 / 0.09) 1px, transparent 1px),
+      linear-gradient(90deg, rgb(255 255 255 / 0.09) 1px, transparent 1px);
+    background-position: center;
+    background-size: 3rem 3rem;
+  }
+
+  .quality-reticle {
+    height: 8.5rem;
+    left: 50%;
+    position: absolute;
+    top: 38%;
+    transform: translate(-50%, -50%);
+    width: 8.5rem;
+  }
+
+  .quality-reticle::before,
+  .quality-reticle::after {
+    background: rgb(218 52 38 / 0.75);
+    content: "";
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .quality-reticle::before {
+    height: 1px;
+    width: 100%;
+  }
+
+  .quality-reticle::after {
+    height: 100%;
+    width: 1px;
+  }
+
+  .quality-reticle span {
+    border: 1px solid rgb(255 255 255 / 0.4);
+    display: block;
+    height: 3.5rem;
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 3.5rem;
+  }
+</style>

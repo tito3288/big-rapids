@@ -7,11 +7,11 @@ const description =
   "Precision automotive metal stampings, exhaust components, structural assemblies, Class A trim, wheel cladding, and EV and industrial components.";
 
 const productFamilies = [
-  { number: "01", title: "Exhaust Components", href: "#exhaust-components" },
-  { number: "02", title: "Class A Trim", href: "#class-a-trim" },
-  { number: "03", title: "Structural Components", href: "#structural-components" },
-  { number: "04", title: "Wheel Cladding", href: "#wheel-cladding" },
-  { number: "05", title: "EV & Industrial", href: "#ev-industrial" },
+  { title: "Exhaust Components", href: "#exhaust-components" },
+  { title: "Class A Trim", href: "#class-a-trim" },
+  { title: "Structural Components", href: "#structural-components" },
+  { title: "Wheel Cladding", href: "#wheel-cladding" },
+  { title: "EV & Industrial", href: "#ev-industrial" },
 ];
 
 const exhaustComponents = [
@@ -45,10 +45,10 @@ const structuralComponents = [
 ];
 
 const structuralSequence = [
-  { number: "01", title: "Stamping", copy: "Precision-formed components produced for repeatable automotive programs." },
-  { number: "02", title: "Robotic Welding", copy: "Integrated joining supports multi-component structural assemblies." },
-  { number: "03", title: "Light Assembly", copy: "Hardware, components, and subassemblies are brought together efficiently." },
-  { number: "04", title: "Finishing Network", copy: "Required e-coating, plating, and specialized finishes are coordinated through qualified supply partners." },
+  { title: "Stamping", copy: "Precision-formed components produced for repeatable automotive programs." },
+  { title: "Robotic Welding", copy: "Integrated joining supports multi-component structural assemblies." },
+  { title: "Light Assembly", copy: "Hardware, components, and subassemblies are brought together efficiently." },
+  { title: "Finishing Network", copy: "Required e-coating, plating, and specialized finishes are coordinated through qualified supply partners." },
 ];
 
 const wheelOutcomes = [
@@ -68,17 +68,14 @@ const wheelOutcomes = [
 
 const industrialApplications = [
   {
-    number: "01",
     title: "Electric Vehicle",
     copy: "EV stampings, battery components, structural parts, and assemblies designed for scalable vehicle programs.",
   },
   {
-    number: "02",
     title: "Appliance",
     copy: "Precision stampings and components that combine dependable manufacturing with cosmetic requirements.",
   },
   {
-    number: "03",
     title: "Building Products",
     copy: "Repeatable metal components for building-product and related industrial manufacturing applications.",
   },
@@ -118,9 +115,8 @@ const industrialApplications = [
           {productFamilies.map((family) => (
             <a
               href={family.href}
-              class="group grid min-h-24 grid-cols-[2.25rem_1fr_auto] items-center gap-3 border-b border-r border-line p-5 text-foreground transition hover:bg-foreground hover:text-background"
+              class="group grid min-h-24 grid-cols-[1fr_auto] items-center gap-3 border-b border-r border-line p-5 text-foreground transition hover:bg-foreground hover:text-background"
             >
-              <span class="text-xs font-black tracking-[0.18em] text-primary">{family.number}</span>
               <span class="font-bold text-current">{family.title}</span>
               <span class="text-primary transition group-hover:translate-y-1">↓</span>
             </a>
@@ -133,7 +129,7 @@ const industrialApplications = [
   <section id="exhaust-components" class="scroll-mt-20 bg-paper py-20 text-paper-muted sm:py-24 lg:py-28">
     <div class="site-container">
       <div class="grid gap-7 border-b border-paper-line pb-12 md:grid-cols-[8rem_1fr] md:gap-10 lg:grid-cols-[8rem_minmax(0,1.05fr)_minmax(21rem,0.75fr)]">
-        <p class="text-xs font-black uppercase tracking-[0.24em] text-primary">01 · Exhaust</p>
+        <p class="text-xs font-black uppercase tracking-[0.24em] text-primary">Exhaust</p>
         <div>
           <p class="text-xs font-black uppercase tracking-[0.22em]">Automotive Components</p>
           <h2 class="mt-5 max-w-5xl text-[clamp(2.5rem,4.6vw,4.6rem)] font-bold leading-[0.98] tracking-[-0.035em] text-ink">
@@ -153,9 +149,8 @@ const industrialApplications = [
       <div class="mt-14 grid items-start gap-10 lg:grid-cols-[minmax(0,0.95fr)_minmax(24rem,1.05fr)] lg:gap-14">
         <div>
           <ul class="grid border-l border-t border-paper-line sm:grid-cols-2" aria-label="Exhaust components">
-            {exhaustComponents.map((component, index) => (
-              <li class="flex min-h-20 items-center gap-4 border-b border-r border-paper-line p-4 font-bold text-ink">
-                <span class="text-[0.65rem] font-black tracking-[0.16em] text-primary">{String(index + 1).padStart(2, "0")}</span>
+            {exhaustComponents.map((component) => (
+              <li class="flex min-h-20 items-center border-b border-r border-paper-line p-4 font-bold text-ink">
                 <span>{component}</span>
               </li>
             ))}
@@ -178,7 +173,7 @@ const industrialApplications = [
     <div class="site-container">
       <div class="grid items-start gap-12 lg:grid-cols-[minmax(22rem,0.88fr)_minmax(0,1.12fr)] lg:gap-16">
         <div class="lg:sticky lg:top-32 lg:self-start">
-          <p class="text-xs font-black uppercase tracking-[0.24em] text-foreground/65">02 · Appearance Products</p>
+          <p class="text-xs font-black uppercase tracking-[0.24em] text-foreground/65">Appearance Products</p>
           <MediaPlaceholder
             slotId="02"
             label="Class A Surfaces"
@@ -230,7 +225,7 @@ const industrialApplications = [
   <section id="structural-components" class="scroll-mt-20 bg-paper py-20 text-paper-muted sm:py-24 lg:py-28">
     <div class="site-container">
       <div class="grid gap-7 border-b border-paper-line pb-12 md:grid-cols-[8rem_1fr] md:gap-10 lg:grid-cols-[8rem_minmax(0,1fr)_minmax(21rem,0.72fr)]">
-        <p class="text-xs font-black uppercase tracking-[0.24em] text-primary">03 · Structural</p>
+        <p class="text-xs font-black uppercase tracking-[0.24em] text-primary">Structural</p>
         <div>
           <p class="text-xs font-black uppercase tracking-[0.22em]">Stampings & Assemblies</p>
           <h2 class="mt-5 max-w-5xl text-[clamp(2.5rem,4.6vw,4.6rem)] font-bold leading-[0.98] tracking-[-0.035em] text-ink">
@@ -247,9 +242,8 @@ const industrialApplications = [
       <div class="mt-14 grid items-start gap-10 lg:grid-cols-[minmax(0,1.05fr)_minmax(24rem,0.95fr)] lg:gap-14">
         <div>
           <ul class="grid border-l border-t border-paper-line sm:grid-cols-2" aria-label="Structural automotive components">
-            {structuralComponents.map((component, index) => (
-              <li class="flex min-h-24 items-center gap-4 border-b border-r border-paper-line p-5 font-bold text-ink">
-                <span class="text-[0.65rem] font-black tracking-[0.16em] text-primary">{String(index + 1).padStart(2, "0")}</span>
+            {structuralComponents.map((component) => (
+              <li class="flex min-h-24 items-center border-b border-r border-paper-line p-5 font-bold text-ink">
                 <span>{component}</span>
               </li>
             ))}
@@ -269,8 +263,7 @@ const industrialApplications = [
       <div class="mt-14 grid border-l border-t border-paper-line sm:grid-cols-2 xl:grid-cols-4">
         {structuralSequence.map((step) => (
           <article class="border-b border-r border-paper-line p-6 sm:p-7">
-            <p class="text-xs font-black tracking-[0.18em] text-primary">{step.number}</p>
-            <div class="mt-8">
+            <div>
               <h3 class="text-xl font-bold text-ink">{step.title}</h3>
               <p class="mt-4 leading-relaxed">{step.copy}</p>
             </div>
@@ -284,7 +277,7 @@ const industrialApplications = [
     <div class="site-container">
       <div class="grid items-start gap-12 lg:grid-cols-[minmax(22rem,0.88fr)_minmax(0,1.12fr)] lg:gap-16">
         <div class="lg:sticky lg:top-32 lg:self-start">
-          <p class="text-xs font-black uppercase tracking-[0.24em] text-primary">04 · Wheel Systems</p>
+          <p class="text-xs font-black uppercase tracking-[0.24em] text-primary">Wheel Systems</p>
           <MediaPlaceholder
             slotId="04"
             label="Wheel Cladding"
@@ -309,10 +302,9 @@ const industrialApplications = [
       </div>
 
       <div class="mt-12 grid border-l border-t border-line md:grid-cols-3">
-        {wheelOutcomes.map((outcome, index) => (
+        {wheelOutcomes.map((outcome) => (
           <article class="border-b border-r border-line p-6 sm:p-7">
-            <p class="text-xs font-black tracking-[0.18em] text-primary">0{index + 1}</p>
-            <h3 class="mt-8 text-xl font-bold text-foreground">{outcome.title}</h3>
+            <h3 class="text-xl font-bold text-foreground">{outcome.title}</h3>
             <p class="mt-4 max-w-md leading-relaxed">{outcome.copy}</p>
           </article>
         ))}
@@ -323,7 +315,7 @@ const industrialApplications = [
   <section id="ev-industrial" class="scroll-mt-20 bg-paper py-20 text-paper-muted sm:py-24 lg:py-28">
     <div class="site-container">
       <div class="grid gap-7 border-b border-paper-line pb-12 md:grid-cols-[8rem_1fr] md:gap-10 lg:grid-cols-[8rem_minmax(0,1fr)_minmax(21rem,0.72fr)]">
-        <p class="text-xs font-black uppercase tracking-[0.24em] text-primary">05 · Emerging Markets</p>
+        <p class="text-xs font-black uppercase tracking-[0.24em] text-primary">Emerging Markets</p>
         <div>
           <p class="text-xs font-black uppercase tracking-[0.22em]">Automotive & Industrial</p>
           <h2 class="mt-5 max-w-5xl text-[clamp(2.5rem,4.6vw,4.6rem)] font-bold leading-[0.98] tracking-[-0.035em] text-ink">
@@ -349,8 +341,7 @@ const industrialApplications = [
 
         <div class="grid border-l border-t border-paper-line">
           {industrialApplications.map((application) => (
-            <article class="grid gap-5 border-b border-r border-paper-line p-6 sm:grid-cols-[3rem_1fr] sm:p-7">
-              <p class="text-xs font-black tracking-[0.18em] text-primary">{application.number}</p>
+            <article class="border-b border-r border-paper-line p-6 sm:p-7">
               <div>
                 <h3 class="text-2xl font-bold text-ink">{application.title}</h3>
                 <p class="mt-4 max-w-2xl leading-relaxed">{application.copy}</p>
@@ -364,7 +355,7 @@ const industrialApplications = [
 
   <section class="relative overflow-hidden border-t border-line bg-background py-20 text-muted sm:py-24 lg:py-28">
     <div class="pointer-events-none absolute -bottom-24 right-0 text-[22rem] font-black leading-none text-foreground/[0.025]" aria-hidden="true">
-      05
+      P
     </div>
     <div class="site-container relative z-10">
       <p class="eyebrow text-primary">Start the Conversation</p>

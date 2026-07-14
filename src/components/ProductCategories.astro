@@ -3,7 +3,6 @@ const products = [
   {
     title: "Structural Components",
     href: "/products#structural-components",
-    index: "01",
     image: "/images/product-structural.jpg",
     alt: "Robotic press cell forming a structural component",
     className: "md:col-span-3 h-80",
@@ -13,7 +12,6 @@ const products = [
   {
     title: "Class A Trim",
     href: "/products#class-a-trim",
-    index: "02",
     image: "/images/product-decorative-trim.jpg",
     alt: "Operator handling decorative trim parts at a press line",
     className: "md:col-span-3 h-80",
@@ -23,7 +21,6 @@ const products = [
   {
     title: "Exhaust Parts",
     href: "/products#exhaust-components",
-    index: "03",
     image: "/images/product-exhaust-parts.jpg",
     alt: "Gloved operator positioning a formed exhaust part in a fixture",
     className: "md:col-span-2 h-72",
@@ -33,7 +30,6 @@ const products = [
   {
     title: "Class A Wheel Cladding",
     href: "/products#wheel-cladding",
-    index: "04",
     image: "/images/product-wheel-claddings.jpg",
     alt: "Laser welding sparks during metal forming work",
     className: "md:col-span-2 h-72",
@@ -43,7 +39,6 @@ const products = [
   {
     title: "EV · Appliance · Building",
     href: "/products#ev-industrial",
-    index: "05",
     image: "/images/product-ev-appliance-building.jpg",
     alt: "Welder assembling a metal component with sparks",
     className: "md:col-span-2 h-72",
@@ -55,7 +50,7 @@ const products = [
 
 <section id="products" class="py-24">
   <div class="site-container">
-    <p class="eyebrow mb-3">03 — Product Categories</p>
+    <p class="eyebrow mb-3">Product Categories</p>
     <h2 class="section-title mb-12 max-w-2xl">From decorative trim to structural assemblies.</h2>
     <div class="grid grid-cols-1 gap-4 md:grid-cols-6">
       {products.map((product) => (
@@ -74,7 +69,6 @@ const products = [
           />
           <div class="card-overlay absolute inset-0"></div>
           <div class="absolute bottom-6 left-6">
-            <p class="eyebrow mb-1 text-primary">{product.index}</p>
             <h3 class:list={[product.heading, "font-semibold text-foreground"]}>{product.title}</h3>
           </div>
         </a>

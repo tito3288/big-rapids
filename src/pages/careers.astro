@@ -1,0 +1,200 @@
+---
+import SiteLayout from "../layouts/SiteLayout.astro";
+
+const title = "Careers at Big Rapids Products";
+const description =
+  "Build a career with Big Rapids Products across five manufacturing facilities in Michigan and Kentucky.";
+const resumeEmail = "resumes@brproducts.com";
+
+const careerReasons = [
+  {
+    title: "Stability You Can Count On",
+    copy: "As a family-owned company with nearly five decades of manufacturing success, Big Rapids Products offers the security, consistency, and long-term opportunities employees are looking for. We're not focused on the next quarter. We're focused on the next generation.",
+    span: "xl:col-span-3",
+  },
+  {
+    title: "Work That Matters",
+    copy: "Every day, our team helps manufacture components found in some of the most recognized vehicles on the road. From structural automotive components and advanced assemblies to decorative trim and electric vehicle applications, the work you do at Big Rapids Products helps move the automotive industry forward.",
+    span: "xl:col-span-3",
+  },
+  {
+    title: "A Team That Feels Like Family",
+    copy: "Ask our employees what makes Big Rapids Products different and you'll hear the same thing: the people. We believe in teamwork, respect, accountability, and supporting one another. Whether you're just starting your career or bringing years of experience, you'll find a workplace where your contributions matter.",
+    span: "xl:col-span-2",
+  },
+  {
+    title: "Opportunities to Learn and Grow",
+    copy: "Manufacturing is evolving rapidly—and so are we. At Big Rapids Products, employees have opportunities to learn new skills, develop technical expertise, and grow their careers in advanced manufacturing, engineering, quality, robotics, automation, and leadership. If you're willing to learn, we'll invest in your future.",
+    span: "xl:col-span-2",
+  },
+  {
+    title: "Industry-Leading Benefits & Employee Resources",
+    copy: "We believe great people deserve great support. Our employees enjoy competitive compensation, comprehensive benefits, career development opportunities, and access to employee-focused resources designed to support health, wellness, and work-life balance. Because success at work starts with support outside of work.",
+    span: "xl:col-span-2",
+  },
+];
+---
+
+<SiteLayout title={title} description={description} canonicalPath="/careers/" socialImage="/images/image-4.jpg">
+  <section id="top" class="relative overflow-hidden border-b border-line bg-background pb-20 pt-44 text-muted sm:pb-24 sm:pt-52 lg:pt-56">
+    <div class="pointer-events-none absolute -right-20 top-28 hidden text-[22rem] font-black leading-none text-foreground/[0.025] xl:block" aria-hidden="true">
+      PEOPLE
+    </div>
+
+    <div class="site-container relative z-10 grid items-start gap-14 lg:grid-cols-[minmax(0,1.08fr)_minmax(23rem,0.92fr)] lg:gap-16">
+      <div class="min-w-0">
+        <p class="eyebrow text-primary">Careers · Michigan & Kentucky</p>
+        <h1 class="hero-title mt-7 max-w-5xl text-[clamp(3rem,6vw,5.75rem)]">
+          Build More Than Parts. Build a Career.
+        </h1>
+        <p class="mt-8 max-w-3xl text-xl font-bold leading-relaxed text-foreground sm:text-2xl">
+          Join a Team That's Built on Quality, Stability, and People.
+        </p>
+        <p class="mt-6 max-w-3xl text-base leading-relaxed sm:text-lg">
+          At Big Rapids Products, we don't just manufacture components for some of the world's leading automotive brands—we build careers, develop people, and create opportunities for long-term success.
+        </p>
+        <div class="mt-10 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+          <a class="careers-email-action btn-red w-full px-7 py-4 text-center sm:w-auto" href={`mailto:${resumeEmail}`}>
+            Send Your Résumé
+          </a>
+          <a class="ghost-button w-full px-7 py-4 text-center sm:w-auto" href="#why-brp">Why Big Rapids Products ↓</a>
+        </div>
+      </div>
+
+      <aside class="border-l border-t border-line" aria-label="Career locations">
+        <div class="border-b border-r border-line p-6 sm:p-8">
+          <p class="text-xs font-black uppercase tracking-[0.24em] text-primary">Opportunity Across Our Footprint</p>
+          <p class="mt-5 text-[clamp(4.5rem,9vw,8rem)] font-black leading-none tracking-[-0.06em] text-foreground">5</p>
+          <p class="mt-3 text-2xl font-bold text-foreground">Manufacturing Facilities</p>
+          <p class="mt-5 max-w-lg leading-relaxed">
+            Big Rapids Products recruits team members across all five facilities in Michigan and Kentucky.
+          </p>
+        </div>
+        <div class="grid grid-cols-2">
+          <div class="border-b border-r border-line p-5 sm:p-7">
+            <p class="text-3xl font-black text-foreground">3</p>
+            <p class="mt-3 text-xs font-black uppercase tracking-[0.18em]">Big Rapids, MI</p>
+          </div>
+          <div class="border-b border-r border-line p-5 sm:p-7">
+            <p class="text-3xl font-black text-foreground">2</p>
+            <p class="mt-3 text-xs font-black uppercase tracking-[0.18em]">Mount Sterling, KY</p>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <section class="border-b border-line bg-surface py-20 text-muted sm:py-24 lg:py-28">
+    <div class="site-container grid items-center gap-12 lg:grid-cols-[minmax(0,1.18fr)_minmax(22rem,0.82fr)] lg:gap-16">
+      <figure
+        class="aspect-video min-w-0 overflow-hidden border border-line bg-background"
+        data-team-video
+      >
+        <video
+          class="h-full w-full object-cover"
+          controls
+          playsinline
+          preload="metadata"
+          poster="/images/careers-team-poster.png"
+          aria-label="Big Rapids Products employees gathering for a team meal"
+        >
+          <source src="/videos/careers-team-480.m4v" type="video/mp4" />
+          Your browser does not support HTML video.
+        </video>
+        <figcaption class="sr-only">Big Rapids Products employees gather for a team meal.</figcaption>
+      </figure>
+
+      <div>
+        <p class="eyebrow text-primary">The People Behind the Parts</p>
+        <h2 class="section-title mt-5 max-w-3xl">It's the people who make them.</h2>
+        <p class="mt-7 text-lg leading-relaxed text-foreground">
+          For nearly 50 years, we've been a trusted manufacturing partner to automotive OEMs and Tier 1 suppliers, producing precision metal stampings, welded assemblies, and advanced manufacturing solutions found in vehicles across North America.
+        </p>
+        <div class="mt-8 border-l-2 border-primary pl-6">
+          <p class="text-xl font-bold leading-relaxed text-foreground">But our most important product isn't the parts we make.</p>
+          <p class="mt-2 text-xl font-bold leading-relaxed text-primary">It's the people who make them.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="why-brp" class="scroll-mt-20 bg-paper py-20 text-paper-muted sm:py-24 lg:py-28">
+    <div class="site-container">
+      <div class="grid gap-7 border-b border-paper-line pb-12 md:grid-cols-[8rem_1fr] md:gap-10">
+        <p class="text-xs font-black uppercase tracking-[0.24em] text-primary">Why BRP</p>
+        <div>
+          <p class="text-xs font-black uppercase tracking-[0.22em]">Careers Built to Last</p>
+          <h2 class="mt-5 max-w-4xl text-[clamp(2.6rem,4.7vw,4.7rem)] font-bold leading-[0.98] tracking-[-0.04em] text-ink">
+            Why People Choose Big Rapids Products
+          </h2>
+        </div>
+      </div>
+
+      <div class="mt-14 grid border-l border-t border-paper-line md:grid-cols-2 xl:grid-cols-6">
+        {careerReasons.map((reason) => (
+          <article class:list={["group border-b border-r border-paper-line p-7 transition-colors hover:bg-ink hover:text-muted sm:p-8", reason.span]}>
+            <h3 class="text-2xl font-bold leading-tight text-ink transition-colors group-hover:text-foreground">{reason.title}</h3>
+            <div class="mt-6 h-0.5 w-12 bg-primary" aria-hidden="true"></div>
+            <p class="mt-6 leading-relaxed">{reason.copy}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="relative overflow-hidden bg-secondary py-20 text-foreground sm:py-24 lg:py-28">
+    <div class="pointer-events-none absolute -bottom-14 right-0 text-[18rem] font-black leading-none text-foreground/[0.04]" aria-hidden="true">
+      TEAM
+    </div>
+    <div class="site-container relative z-10 grid items-start gap-10 lg:grid-cols-[minmax(18rem,0.55fr)_minmax(0,1.45fr)] lg:gap-16">
+      <div>
+        <p class="text-xs font-black uppercase tracking-[0.24em] text-foreground/65">Built for the Long Haul</p>
+        <p class="mt-6 max-w-md text-lg leading-relaxed text-foreground/75">
+          The same is true for a great career.
+        </p>
+      </div>
+      <div>
+        <h2 class="max-w-5xl text-[clamp(2.8rem,5.6vw,5.8rem)] font-bold leading-[0.94] tracking-[-0.045em]">
+          Every successful automotive program depends on reliability, consistency, and execution.
+        </h2>
+        <p class="mt-8 max-w-4xl text-lg leading-relaxed text-foreground/80">
+          When you join Big Rapids Products, you're joining a company that values craftsmanship, innovation, continuous improvement, and people who take pride in doing things the right way.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="relative overflow-hidden border-t border-line bg-background py-20 text-muted sm:py-24 lg:py-28">
+    <div class="site-container relative z-10">
+      <div class="grid gap-7 md:grid-cols-[8rem_1fr] md:gap-10">
+        <p class="text-xs font-black uppercase tracking-[0.24em] text-primary">Careers</p>
+        <div>
+          <h2 class="section-title max-w-5xl">Your Future Starts Here</h2>
+          <p class="mt-7 max-w-4xl text-lg leading-relaxed text-foreground">
+            Whether you're interested in manufacturing, welding, quality, engineering, maintenance, robotics, automation, or leadership opportunities, Big Rapids Products offers a place where you can grow, contribute, and build something meaningful.
+          </p>
+          <p class="mt-5 max-w-4xl leading-relaxed">
+            Join a company that is engineered to reduce risk, built to deliver, and committed to helping people succeed.
+          </p>
+        </div>
+      </div>
+
+      <div class="mt-14 flex flex-col justify-between gap-8 border-t border-line pt-10 lg:flex-row lg:items-end">
+        <div>
+          <p class="mt-4 max-w-3xl text-[clamp(2rem,4.2vw,4.25rem)] font-bold leading-[0.98] tracking-[-0.035em] text-foreground">
+            If you are interested in a position at Big Rapids Products, please send your resume to <span class="break-all text-primary">{resumeEmail}</span>.
+          </p>
+        </div>
+        <a class="careers-email-action btn-red w-full shrink-0 px-8 py-5 text-center sm:w-auto" href={`mailto:${resumeEmail}`}>
+          Send Your Résumé
+        </a>
+      </div>
+    </div>
+  </section>
+</SiteLayout>
+
+<style>
+  .careers-email-action {
+    white-space: normal;
+  }
+</style>

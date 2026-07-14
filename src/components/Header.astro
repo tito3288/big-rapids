@@ -1,14 +1,17 @@
 ---
 const isHome = Astro.url.pathname === "/";
 const isCapabilities = Astro.url.pathname.startsWith("/capabilities");
+const isQuality = Astro.url.pathname.startsWith("/quality");
 const isProducts = Astro.url.pathname.startsWith("/products");
 const isAbout = Astro.url.pathname.startsWith("/about");
+const isCareers = Astro.url.pathname.startsWith("/careers");
 
 const navItems = [
   { href: "/capabilities", label: "Capabilities", current: isCapabilities },
+  { href: "/quality", label: "Quality", current: isQuality },
   { href: "/products", label: "Products", current: isProducts },
   { href: "/about", label: "About", current: isAbout },
-  { href: isHome ? "#careers" : "/#careers", label: "Careers", current: false },
+  { href: "/careers", label: "Careers", current: isCareers },
 ];
 
 const homeHref = isHome ? "#top" : "/";
@@ -46,7 +49,7 @@ const proofPoints = ["Founded 1977", "5 facilities", "IATF 16949:2016"];
           </div>
 
           <nav class="flex flex-1 items-stretch justify-end text-[0.72rem] font-black uppercase tracking-[0.22em] text-foreground" aria-label="Primary navigation">
-            {navItems.map((item, index) => (
+            {navItems.map((item) => (
               <a
                 class:list={[
                   "header-nav-link group flex items-center gap-3 border-l border-line px-5 transition hover:bg-foreground hover:text-background",
@@ -55,7 +58,6 @@ const proofPoints = ["Founded 1977", "5 facilities", "IATF 16949:2016"];
                 href={item.href}
                 aria-current={item.current ? "page" : undefined}
               >
-                <span class="header-nav-index text-primary transition">0{index + 1}</span>
                 <span class="header-nav-label transition">{item.label}</span>
               </a>
             ))}
@@ -87,16 +89,15 @@ const proofPoints = ["Founded 1977", "5 facilities", "IATF 16949:2016"];
             <p class="text-[0.65rem] font-black uppercase tracking-[0.24em] text-primary">BRP</p>
           </div>
 
-          {navItems.map((item, index) => (
+          {navItems.map((item) => (
             <a
               class:list={[
-                "header-nav-link group grid grid-cols-[auto_1fr_auto] items-center gap-4 border-b border-line px-5 py-5 transition hover:bg-foreground hover:text-background",
+                "header-nav-link group grid grid-cols-[1fr_auto] items-center gap-4 border-b border-line px-5 py-5 transition hover:bg-foreground hover:text-background",
                 { "bg-foreground/10": item.current },
               ]}
               href={item.href}
               aria-current={item.current ? "page" : undefined}
             >
-              <span class="header-nav-index text-xs font-black text-primary transition">0{index + 1}</span>
               <span class="header-nav-label text-2xl font-black uppercase tracking-normal transition">{item.label}</span>
               <span class="header-nav-index text-primary transition group-hover:translate-x-1">→</span>
             </a>

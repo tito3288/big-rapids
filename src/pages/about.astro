@@ -14,12 +14,10 @@ const companyProofs = [
 
 const manufacturingScope = [
   {
-    number: "01",
     title: "Engineered Manufacturing",
     copy: "Precision metal stamping, robotic welding, assembly, deep draw manufacturing, Class A components, structural parts, and battery components support demanding production programs.",
   },
   {
-    number: "02",
     title: "Customer Partnership",
     copy: "Engineering, tooling, automation, and manufacturing teams work with customers to improve manufacturability, solve production challenges, and reduce program risk.",
   },
@@ -27,22 +25,18 @@ const manufacturingScope = [
 
 const commitments = [
   {
-    number: "01",
     title: "Engineering Collaboration",
     copy: "Connect product requirements with practical manufacturing decisions early in the program.",
   },
   {
-    number: "02",
     title: "Continuous Improvement",
     copy: "Strengthen products and processes through disciplined review, learning, and refinement.",
   },
   {
-    number: "03",
     title: "Dependable Execution",
     copy: "Support launches and ongoing production with responsive communication and accountable delivery.",
   },
   {
-    number: "04",
     title: "Customer Confidence",
     copy: "Build trust through consistent quality, reliable performance, and long-term manufacturing support.",
   },
@@ -50,13 +44,11 @@ const commitments = [
 
 const locations = [
   {
-    number: "03",
     region: "Michigan",
     city: "Big Rapids, MI",
     copy: "Three facilities supporting corporate, manufacturing, tooling, and assembly operations.",
   },
   {
-    number: "02",
     region: "Kentucky",
     city: "Mount Sterling, KY",
     copy: "Two manufacturing facilities supporting stamping and assembly programs.",
@@ -132,7 +124,7 @@ const qualityProofs = [
   <section id="our-story" class="scroll-mt-20 bg-paper py-20 text-paper-muted sm:py-24 lg:py-28">
     <div class="site-container">
       <div class="grid gap-7 border-b border-paper-line pb-12 md:grid-cols-[8rem_1fr] md:gap-10 lg:grid-cols-[8rem_minmax(0,1fr)_minmax(21rem,0.72fr)]">
-        <p class="text-xs font-black uppercase tracking-[0.24em] text-primary">01 · Company</p>
+        <p class="text-xs font-black uppercase tracking-[0.24em] text-primary">Company</p>
         <div>
           <p class="text-xs font-black uppercase tracking-[0.22em]">About Big Rapids Products</p>
           <h2 class="mt-5 max-w-4xl text-[clamp(2.6rem,4.7vw,4.7rem)] font-bold leading-[0.98] tracking-[-0.04em] text-ink">
@@ -161,8 +153,7 @@ const qualityProofs = [
 
         <div class="grid border-l border-t border-paper-line">
           {manufacturingScope.map((item) => (
-            <article class="grid gap-5 border-b border-r border-paper-line p-6 sm:grid-cols-[3rem_1fr] sm:p-7">
-              <p class="text-xs font-black tracking-[0.18em] text-primary">{item.number}</p>
+            <article class="border-b border-r border-paper-line p-6 sm:p-7">
               <div>
                 <h3 class="text-2xl font-bold text-ink">{item.title}</h3>
                 <p class="mt-4 leading-relaxed">{item.copy}</p>
@@ -178,7 +169,7 @@ const qualityProofs = [
     <div class="site-container">
       <div class="grid grid-cols-[minmax(0,1fr)] items-start gap-12 lg:grid-cols-[minmax(0,1.05fr)_minmax(22rem,0.95fr)] lg:gap-16">
         <div>
-          <p class="text-xs font-black uppercase tracking-[0.24em] text-foreground/65">02 · Our Commitment</p>
+          <p class="text-xs font-black uppercase tracking-[0.24em] text-foreground/65">Our Commitment</p>
           <h2 class="mt-6 max-w-4xl text-[clamp(2.25rem,5vw,5rem)] font-bold leading-[0.96] tracking-[-0.04em]">
             Quality, delivery, and responsiveness—without compromise.
           </h2>
@@ -203,8 +194,7 @@ const qualityProofs = [
       <div class="mt-12 grid border-l border-t border-foreground/20 sm:grid-cols-2 xl:grid-cols-4">
         {commitments.map((commitment) => (
           <article class="border-b border-r border-foreground/20 p-6 sm:p-7">
-            <p class="text-xs font-black tracking-[0.18em] text-foreground/55">{commitment.number}</p>
-            <h3 class="mt-8 text-xl font-bold">{commitment.title}</h3>
+            <h3 class="text-xl font-bold">{commitment.title}</h3>
             <p class="mt-4 leading-relaxed text-foreground/75">{commitment.copy}</p>
           </article>
         ))}
@@ -215,7 +205,7 @@ const qualityProofs = [
   <section class="border-y border-line bg-surface py-20 text-muted sm:py-24 lg:py-28">
     <div class="site-container">
       <div class="grid gap-7 border-b border-line pb-12 md:grid-cols-[8rem_1fr] md:gap-10 lg:grid-cols-[8rem_minmax(0,1fr)_minmax(20rem,0.65fr)]">
-        <p class="text-xs font-black uppercase tracking-[0.24em] text-primary">03 · Footprint</p>
+        <p class="text-xs font-black uppercase tracking-[0.24em] text-primary">Footprint</p>
         <div>
           <p class="eyebrow">Michigan & Kentucky</p>
           <h2 class="section-title mt-5 max-w-4xl">Five facilities. One connected manufacturing partner.</h2>
@@ -229,8 +219,7 @@ const qualityProofs = [
         <div class="grid border-l border-t border-line sm:grid-cols-2">
           {locations.map((location) => (
             <article class="border-b border-r border-line p-6 sm:p-7">
-              <p class="text-[clamp(3.5rem,7vw,6.5rem)] font-black leading-none tracking-[-0.06em] text-foreground">{location.number}</p>
-              <p class="mt-5 text-xs font-black uppercase tracking-[0.2em] text-primary">{location.region}</p>
+              <p class="text-xs font-black uppercase tracking-[0.2em] text-primary">{location.region}</p>
               <h3 class="mt-3 text-2xl font-bold text-foreground">{location.city}</h3>
               <p class="mt-5 leading-relaxed">{location.copy}</p>
             </article>
@@ -252,7 +241,7 @@ const qualityProofs = [
   <section class="bg-paper py-20 text-paper-muted sm:py-24 lg:py-28">
     <div class="site-container">
       <div class="grid gap-7 border-b border-paper-line pb-12 md:grid-cols-[8rem_1fr] md:gap-10 lg:grid-cols-[8rem_minmax(0,1fr)_minmax(21rem,0.72fr)]">
-        <p class="text-xs font-black uppercase tracking-[0.24em] text-primary">04 · Quality</p>
+        <p class="text-xs font-black uppercase tracking-[0.24em] text-primary">Quality</p>
         <div>
           <p class="text-xs font-black uppercase tracking-[0.22em]">Producing Quality</p>
           <h2 class="mt-5 max-w-4xl text-[clamp(2.6rem,4.7vw,4.7rem)] font-bold leading-[0.98] tracking-[-0.04em] text-ink">
@@ -265,10 +254,9 @@ const qualityProofs = [
       </div>
 
       <div class="mt-12 grid border-l border-t border-paper-line sm:grid-cols-2 xl:grid-cols-4">
-        {qualityProofs.map((proof, index) => (
+        {qualityProofs.map((proof) => (
           <article class="border-b border-r border-paper-line p-6 sm:p-7">
-            <p class="text-xs font-black tracking-[0.18em] text-primary">0{index + 1}</p>
-            <h3 class="mt-8 text-xl font-bold text-ink">{proof.title}</h3>
+            <h3 class="text-xl font-bold text-ink">{proof.title}</h3>
             <p class="mt-4 leading-relaxed">{proof.copy}</p>
           </article>
         ))}

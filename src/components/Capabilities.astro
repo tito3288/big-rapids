@@ -3,26 +3,26 @@ const stats = [
   {
     value: "60+",
     label: "Presses",
-    detail: "Line, progressive and transfer",
+    detail: "Line, Progressive and Transfer",
   },
   {
     value: "2200",
     unit: "T",
     label: "Maximum press capacity",
-    detail: "Transfer press tonnage",
+    detail: "Transfer Press Tonnage",
   },
   {
     value: "110 x 300",
     unit: "in.",
     label: "Maximum bed size",
-    detail: "ISGEC transfer press",
+    detail: "Transfer Press",
     compact: true,
   },
   {
     value: "50-2200",
     unit: "T",
     label: "Stamping range",
-    detail: "Production press capacity",
+    detail: "Production Press Capacity",
     compact: true,
   },
 ];
@@ -42,7 +42,7 @@ const services = [
   <div class="site-container">
     <div class="mb-12 grid gap-8 lg:mb-16 lg:grid-cols-[minmax(0,0.95fr)_minmax(320px,0.55fr)] lg:items-end">
       <div>
-        <p class="eyebrow mb-3">01 — Capabilities</p>
+        <p class="eyebrow mb-3">Capabilities</p>
         <h2 class="section-title max-w-3xl">Built for complex stampings. Engineered to reduce risk.</h2>
       </div>
       <div class="max-w-xl lg:justify-self-end">
@@ -59,11 +59,10 @@ const services = [
     </div>
 
     <div class="grid grid-cols-1 gap-px border border-line bg-line sm:grid-cols-2 lg:grid-cols-4">
-      {stats.map((stat, index) => (
+      {stats.map((stat) => (
         <article class="flex min-h-64 min-w-0 flex-col justify-between bg-background p-6 md:p-8">
           <div>
-            <p class="text-xs font-semibold uppercase tracking-[0.2em] text-primary">0{index + 1}</p>
-            <div class="mt-8 flex min-w-0 items-baseline gap-2">
+            <div class="flex min-w-0 items-baseline gap-2">
               <span class:list={["stat-number", stat.compact && "stat-number--compact"]}>{stat.value}</span>
               {stat.unit && <span class="text-xl font-bold uppercase text-muted md:text-2xl">{stat.unit}</span>}
             </div>

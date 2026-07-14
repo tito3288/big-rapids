@@ -44,7 +44,7 @@ const careerReasons = [
     <div class="site-container relative z-10 grid items-start gap-14 lg:grid-cols-[minmax(0,1.08fr)_minmax(23rem,0.92fr)] lg:gap-16">
       <div class="min-w-0">
         <p class="eyebrow text-primary">Careers · Michigan & Kentucky</p>
-        <h1 class="hero-title mt-7 max-w-5xl text-[clamp(3rem,6vw,5.75rem)]">
+        <h1 class="hero-title page-hero-title--long mt-7 max-w-5xl">
           Build More Than Parts. Build a Career.
         </h1>
         <p class="mt-8 max-w-3xl text-xl font-bold leading-relaxed text-foreground sm:text-2xl">
@@ -55,7 +55,7 @@ const careerReasons = [
         </p>
         <div class="mt-10 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
           <a class="careers-email-action btn-red w-full px-7 py-4 text-center sm:w-auto" href={`mailto:${resumeEmail}`}>
-            Send Your Résumé
+            Send Your Resume
           </a>
           <a class="ghost-button w-full px-7 py-4 text-center sm:w-auto" href="#why-brp">Why Big Rapids Products ↓</a>
         </div>
@@ -124,7 +124,7 @@ const careerReasons = [
         <p class="text-xs font-black uppercase tracking-[0.24em] text-primary">Why BRP</p>
         <div>
           <p class="text-xs font-black uppercase tracking-[0.22em]">Careers Built to Last</p>
-          <h2 class="mt-5 max-w-4xl text-[clamp(2.6rem,4.7vw,4.7rem)] font-bold leading-[0.98] tracking-[-0.04em] text-ink">
+          <h2 class="display-heading mt-5 max-w-4xl text-[clamp(2.6rem,4vw,4.1rem)] font-bold leading-[0.98] tracking-[-0.04em] text-ink">
             Why People Choose Big Rapids Products
           </h2>
         </div>
@@ -154,7 +154,7 @@ const careerReasons = [
         </p>
       </div>
       <div>
-        <h2 class="max-w-5xl text-[clamp(2.8rem,5.6vw,5.8rem)] font-bold leading-[0.94] tracking-[-0.045em]">
+        <h2 class="display-heading max-w-5xl text-[clamp(2.8rem,4.5vw,4.75rem)] font-bold leading-[0.94] tracking-[-0.045em]">
           Every successful automotive program depends on reliability, consistency, and execution.
         </h2>
         <p class="mt-8 max-w-4xl text-lg leading-relaxed text-foreground/80">
@@ -179,14 +179,18 @@ const careerReasons = [
         </div>
       </div>
 
-      <div class="mt-14 flex flex-col justify-between gap-8 border-t border-line pt-10 lg:flex-row lg:items-end">
-        <div>
-          <p class="mt-4 max-w-3xl text-[clamp(2rem,4.2vw,4.25rem)] font-bold leading-[0.98] tracking-[-0.035em] text-foreground">
-            If you are interested in a position at Big Rapids Products, please send your resume to <span class="break-all text-primary">{resumeEmail}</span>.
+      <div class="mt-14 grid gap-10 border-t border-line pt-10 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-center">
+        <div class="min-w-0">
+          <p class="display-heading max-w-4xl text-[clamp(2rem,3vw,3.1rem)] font-bold leading-[1.04] tracking-[-0.03em] text-foreground">
+            If you are interested in a position at Big Rapids Products, please send your resume to
           </p>
+          <a
+            class="careers-email-address mt-4 block max-w-full text-[clamp(1.8rem,3.2vw,3.25rem)] font-bold leading-tight tracking-[-0.03em] [overflow-wrap:anywhere] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary"
+            href={`mailto:${resumeEmail}`}
+          >{resumeEmail}</a>
         </div>
-        <a class="careers-email-action btn-red w-full shrink-0 px-8 py-5 text-center sm:w-auto" href={`mailto:${resumeEmail}`}>
-          Send Your Résumé
+        <a class="careers-email-action btn-red w-full shrink-0 px-8 py-5 text-center sm:w-auto lg:self-center" href={`mailto:${resumeEmail}`}>
+          Send Your Resume
         </a>
       </div>
     </div>
@@ -196,5 +200,15 @@ const careerReasons = [
 <style>
   .careers-email-action {
     white-space: normal;
+  }
+
+  .careers-email-address {
+    color: var(--color-primary) !important;
+    transition: color 0.2s ease;
+  }
+
+  .careers-email-address:hover,
+  .careers-email-address:focus-visible {
+    color: var(--color-foreground) !important;
   }
 </style>

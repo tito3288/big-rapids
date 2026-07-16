@@ -1,26 +1,33 @@
-<footer class="border-t border-line py-10">
-  <div class="site-container grid gap-8 text-sm lg:grid-cols-[auto_1fr] lg:items-start">
-    <a href="/" class="w-fit rounded-sm bg-logo-plate px-3 py-2" aria-label="Big Rapids Products home">
-      <img src="/images/logo.png" alt="Big Rapids Products" class="h-7 w-auto" />
-    </a>
-
-    <div class="flex flex-col gap-6 lg:items-end">
-      <div class="flex flex-wrap gap-x-7 gap-y-4 lg:justify-end" aria-label="Big Rapids Products contact information">
-        <a class="group" href="tel:+12317963593">
-          <span class="block text-[0.62rem] font-black uppercase tracking-[0.2em] text-primary">Phone</span>
-          <span class="mt-1 block font-bold text-foreground transition group-hover:text-primary">(231) 796-3593</span>
+<footer class="border-t border-line py-12 sm:py-14">
+  <div class="site-container text-sm">
+    <div class="grid gap-10 border-b border-line pb-10 lg:grid-cols-[minmax(15rem,0.8fr)_minmax(0,1.2fr)] lg:items-center lg:gap-16">
+      <div class="flex flex-col items-center text-center lg:items-start lg:text-left">
+        <a href="/" class="w-fit" aria-label="Big Rapids Products home">
+          <img src="/images/brp-logo-chrome.png" alt="Big Rapids Products" class="h-10 w-auto sm:h-11" />
         </a>
-        <div>
-          <span class="block text-[0.62rem] font-black uppercase tracking-[0.2em] text-primary">Fax</span>
-          <span class="mt-1 block font-bold text-foreground">(231) 796-9066</span>
-        </div>
-        <a class="group" href="/#contact">
-          <span class="block text-[0.62rem] font-black uppercase tracking-[0.2em] text-primary">Email</span>
-          <span class="mt-1 block font-bold text-foreground transition group-hover:text-primary">Quick Email →</span>
-        </a>
+        <p class="mt-5 max-w-sm leading-relaxed text-muted">
+          Precision metal stamping and assembly solutions built for dependable production.
+        </p>
       </div>
 
-      <div class="flex flex-wrap items-center gap-3" aria-label="Big Rapids Products social media channels">
+      <div class="grid border-l border-t border-line sm:grid-cols-3" aria-label="Big Rapids Products contact information">
+        <a class="group border-b border-r border-line p-5 sm:p-6" href="tel:+12317963593">
+          <span class="block text-[0.62rem] font-black uppercase tracking-[0.2em] text-primary">Phone</span>
+          <span class="mt-2 block font-bold text-foreground transition group-hover:text-primary">(231) 796-3593</span>
+        </a>
+        <div class="border-b border-r border-line p-5 sm:p-6">
+          <span class="block text-[0.62rem] font-black uppercase tracking-[0.2em] text-primary">Fax</span>
+          <span class="mt-2 block font-bold text-foreground">(231) 796-9066</span>
+        </div>
+        <a class="group border-b border-r border-line p-5 sm:p-6" href="/#contact">
+          <span class="block text-[0.62rem] font-black uppercase tracking-[0.2em] text-primary">Email</span>
+          <span class="mt-2 block font-bold text-foreground transition group-hover:text-primary">Quick Email →</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="mt-8 flex flex-col items-center gap-7 sm:flex-row sm:justify-between">
+      <div class="flex flex-wrap items-center justify-center gap-3 sm:justify-start" aria-label="Big Rapids Products social media channels">
         <p class="mr-1 text-[0.65rem] font-black uppercase tracking-[0.22em] text-muted">Follow BRP</p>
 
         <a
@@ -62,7 +69,18 @@
         </a>
       </div>
 
-      <p class="leading-relaxed lg:text-right">© <span data-current-year></span> Big Rapids Products. All rights reserved. · IATF 16949:2016 Certified</p>
+      <div class="max-w-xl text-center leading-relaxed sm:text-right">
+        <p>© <span data-current-year></span> Big Rapids Products. All rights reserved. · IATF 16949:2016 Certified</p>
+        <p class="mt-4 flex items-center justify-center gap-2 text-[0.68rem] font-black uppercase tracking-[0.16em] sm:justify-end">
+          <span class="text-muted/75">Designed by:</span>
+          <a
+            class="designer-credit transition"
+            href="https://bryandevelops.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >Bryan Develops</a>
+        </p>
+      </div>
     </div>
   </div>
 </footer>
@@ -72,3 +90,14 @@
     element.textContent = String(new Date().getFullYear());
   });
 </script>
+
+<style>
+  .designer-credit {
+    color: var(--color-primary);
+  }
+
+  .designer-credit:hover,
+  .designer-credit:focus-visible {
+    color: var(--color-foreground);
+  }
+</style>

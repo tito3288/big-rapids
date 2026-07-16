@@ -1,6 +1,5 @@
 ---
 import SiteLayout from "../layouts/SiteLayout.astro";
-import MediaPlaceholder from "../components/MediaPlaceholder.astro";
 
 const title = "About Big Rapids Products | Precision Manufacturing Partner";
 const description =
@@ -232,14 +231,17 @@ const qualityProofs = [
           ))}
         </div>
 
-        <MediaPlaceholder
-          slotId="03"
-          label="Manufacturing Footprint"
-          suggestedSubject="A wide facility exterior, multi-building campus, or active plant-floor view representing BRP's Michigan and Kentucky footprint."
-          aspect="panoramic"
-          tone="dark"
-          class="min-w-0 w-full"
-        />
+        <figure class="min-w-0 aspect-[4/3] w-full overflow-hidden border border-line bg-background sm:aspect-[16/7]">
+          <img
+            src="/images/brp-aerial.png"
+            alt="Aerial view of the Big Rapids Products manufacturing campus"
+            class="h-full w-full object-cover object-center"
+            width="1280"
+            height="720"
+            loading="lazy"
+            decoding="async"
+          />
+        </figure>
       </div>
     </div>
   </section>

@@ -54,8 +54,8 @@ const careerReasons = [
           At Big Rapids Products, we don't just manufacture components for some of the world's leading automotive brands—we build careers, develop people, and create opportunities for long-term success.
         </p>
         <div class="mt-10 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
-          <a class="careers-email-action btn-red w-full px-7 py-4 text-center sm:w-auto" href={`mailto:${resumeEmail}`}>
-            Send Your Resume
+          <a class="careers-email-action btn-red w-full px-7 py-4 text-center sm:w-auto" href="#apply">
+            How to Apply ↓
           </a>
           <a class="ghost-button w-full px-7 py-4 text-center sm:w-auto" href="#why-brp">Why Big Rapids Products ↓</a>
         </div>
@@ -164,7 +164,7 @@ const careerReasons = [
     </div>
   </section>
 
-  <section class="relative overflow-hidden border-t border-line bg-background py-20 text-muted sm:py-24 lg:py-28">
+  <section id="apply" class="scroll-mt-20 relative overflow-hidden border-t border-line bg-background py-20 text-muted sm:py-24 lg:py-28">
     <div class="site-container relative z-10">
       <div class="grid gap-7 md:grid-cols-[8rem_1fr] md:gap-10">
         <p class="text-xs font-black uppercase tracking-[0.24em] text-primary">Careers</p>
@@ -179,19 +179,15 @@ const careerReasons = [
         </div>
       </div>
 
-      <div class="mt-14 grid gap-10 border-t border-line pt-10 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-center">
+      <div class="mx-auto mt-14 max-w-5xl border-t border-line pt-10 text-center">
         <div class="min-w-0">
-          <p class="display-heading max-w-4xl text-[clamp(2rem,3vw,3.1rem)] font-bold leading-[1.04] tracking-[-0.03em] text-foreground">
+          <p class="display-heading mx-auto max-w-4xl text-[clamp(2rem,3vw,3.1rem)] font-bold leading-[1.04] tracking-[-0.03em] text-foreground">
             If you are interested in a position at Big Rapids Products, please send your resume to
           </p>
-          <a
-            class="careers-email-address mt-4 block max-w-full text-[clamp(1.8rem,3.2vw,3.25rem)] font-bold leading-tight tracking-[-0.03em] [overflow-wrap:anywhere] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary"
-            href={`mailto:${resumeEmail}`}
-          >{resumeEmail}</a>
+          <p class="careers-email-address mt-4 max-w-full text-[clamp(1.8rem,3.2vw,3.25rem)] font-bold leading-tight tracking-[-0.03em] [overflow-wrap:anywhere]">
+            {resumeEmail}
+          </p>
         </div>
-        <a class="careers-email-action btn-red w-full shrink-0 px-8 py-5 text-center sm:w-auto lg:self-center" href={`mailto:${resumeEmail}`}>
-          Send Your Resume
-        </a>
       </div>
     </div>
   </section>
@@ -204,11 +200,5 @@ const careerReasons = [
 
   .careers-email-address {
     color: var(--color-primary) !important;
-    transition: color 0.2s ease;
-  }
-
-  .careers-email-address:hover,
-  .careers-email-address:focus-visible {
-    color: var(--color-foreground) !important;
   }
 </style>

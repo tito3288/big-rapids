@@ -32,7 +32,7 @@ const proofPoints = ["Founded 1977", "5 facilities", "IATF 16949:2016"];
           class="flex shrink-0 items-center border-r border-line bg-logo-plate px-3 transition hover:bg-white sm:px-5"
           aria-label="Big Rapids Products home"
         >
-          <img src="/images/logo.png" alt="Big Rapids Products" class="h-7 w-auto sm:h-8" />
+          <img src="/images/logo.png" alt="Big Rapids Products" class="h-6 w-auto sm:h-8" />
         </a>
 
         <div class="hidden min-w-0 flex-1 flex-col lg:flex">
@@ -65,9 +65,14 @@ const proofPoints = ["Founded 1977", "5 facilities", "IATF 16949:2016"];
           </nav>
         </div>
 
+        <a
+          class="btn-red ml-auto px-2 text-center text-[0.52rem] tracking-[0.07em] lg:!hidden sm:px-4 sm:text-[0.68rem] sm:tracking-[0.14em]"
+          href={quoteHref}
+        >Request a Quote</a>
+
         <button
           id="menuBtn"
-          class="menu-toggle flex min-w-16 items-center justify-center border-l border-line text-foreground transition hover:bg-foreground hover:text-background lg:hidden"
+          class="menu-toggle flex min-w-14 items-center justify-center border-l border-line text-foreground transition hover:bg-foreground hover:text-background sm:min-w-16 lg:hidden"
           type="button"
           aria-controls="mobileNav"
           aria-expanded="false"

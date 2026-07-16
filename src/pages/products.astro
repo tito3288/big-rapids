@@ -1,6 +1,5 @@
 ---
 import SiteLayout from "../layouts/SiteLayout.astro";
-import MediaPlaceholder from "../components/MediaPlaceholder.astro";
 
 const title = "Automotive Metal Stampings & Assemblies | Big Rapids Products";
 const description =
@@ -153,14 +152,15 @@ const industrialApplications = [
           </ul>
         </div>
 
-        <MediaPlaceholder
-          slotId="01"
-          label="Exhaust Components"
-          suggestedSubject="Stamped exhaust housings, manifolds, heat shields, muffler shells, or a grouped component family."
-          aspect="panoramic"
-          tone="light"
-          class="w-full lg:sticky lg:top-32 lg:self-start"
-        />
+        <figure class="aspect-[3/2] w-full overflow-hidden border border-paper-line bg-ink lg:sticky lg:top-32 lg:self-start">
+          <img
+            src="/images/product-exhaust-parts.jpg"
+            alt="Big Rapids Products stamped exhaust components displayed together"
+            class="h-full w-full object-cover object-center"
+            loading="lazy"
+            decoding="async"
+          />
+        </figure>
       </div>
     </div>
   </section>
@@ -170,14 +170,15 @@ const industrialApplications = [
       <div class="grid items-start gap-12 lg:grid-cols-[minmax(22rem,0.88fr)_minmax(0,1.12fr)] lg:gap-16">
         <div class="lg:sticky lg:top-32 lg:self-start">
           <p class="text-xs font-black uppercase tracking-[0.24em] text-foreground/65">Appearance Products</p>
-          <MediaPlaceholder
-            slotId="02"
-            label="Class A Surfaces"
-            suggestedSubject="Reflective stainless-steel or aluminum Class A trim, exhaust tips, or a finished appearance component."
-            aspect="landscape"
-            tone="oxblood"
-            class="mt-8 w-full"
-          />
+          <figure class="mt-8 aspect-[4/3] w-full overflow-hidden border border-foreground/20 bg-background">
+            <img
+              src="/images/product-decorative-trim.jpg"
+              alt="Big Rapids Products Class A decorative trim components"
+              class="h-full w-full object-cover object-center"
+              loading="lazy"
+              decoding="async"
+            />
+          </figure>
         </div>
 
         <div>
@@ -246,14 +247,15 @@ const industrialApplications = [
           </ul>
         </div>
 
-        <MediaPlaceholder
-          slotId="03"
-          label="Structural Assembly"
-          suggestedSubject="Body reinforcement, structural bracket family, seating component, or finished welded stamped assembly."
-          aspect="panoramic"
-          tone="light"
-          class="w-full lg:sticky lg:top-32 lg:self-start"
-        />
+        <figure class="aspect-[3/2] w-full overflow-hidden border border-paper-line bg-ink lg:sticky lg:top-32 lg:self-start">
+          <img
+            src="/images/home-structural-components.jpg"
+            alt="Big Rapids Products structural stampings and assemblies"
+            class="h-full w-full object-cover object-center"
+            loading="lazy"
+            decoding="async"
+          />
+        </figure>
       </div>
 
       <div class="mt-14 grid border-l border-t border-paper-line sm:grid-cols-2 xl:grid-cols-4">
@@ -274,14 +276,15 @@ const industrialApplications = [
       <div class="grid items-start gap-12 lg:grid-cols-[minmax(22rem,0.88fr)_minmax(0,1.12fr)] lg:gap-16">
         <div class="lg:sticky lg:top-32 lg:self-start">
           <p class="text-xs font-black uppercase tracking-[0.24em] text-primary">Wheel Systems</p>
-          <MediaPlaceholder
-            slotId="04"
-            label="Wheel Cladding"
-            suggestedSubject="Finished stainless-steel wheel-cladding component showing its Class A surface, profile, and formed geometry."
-            aspect="landscape"
-            tone="dark"
-            class="mt-8 w-full"
-          />
+          <figure class="mt-8 aspect-[4/3] w-full overflow-hidden border border-line bg-background">
+            <img
+              src="/images/product-wheel-claddings.jpg"
+              alt="Big Rapids Products Class A wheel cladding component"
+              class="h-full w-full object-cover object-center"
+              loading="lazy"
+              decoding="async"
+            />
+          </figure>
         </div>
 
         <div>
@@ -326,14 +329,15 @@ const industrialApplications = [
       </div>
 
       <div class="mt-14 grid items-start gap-10 lg:grid-cols-[minmax(22rem,0.88fr)_minmax(0,1.12fr)] lg:gap-14">
-        <MediaPlaceholder
-          slotId="05"
-          label="EV & Industrial"
-          suggestedSubject="EV battery component or casing, structural EV assembly, or a curated group of appliance and industrial stampings."
-          aspect="panoramic"
-          tone="light"
-          class="w-full lg:sticky lg:top-32 lg:self-start"
-        />
+        <figure class="aspect-[3/2] w-full overflow-hidden border border-paper-line bg-ink lg:sticky lg:top-32 lg:self-start">
+          <img
+            src="/images/home-ev-appliance-building.jpg"
+            alt="Big Rapids Products appliance component stampings"
+            class="h-full w-full object-cover object-center"
+            loading="lazy"
+            decoding="async"
+          />
+        </figure>
 
         <div class="grid border-l border-t border-paper-line">
           {industrialApplications.map((application) => (

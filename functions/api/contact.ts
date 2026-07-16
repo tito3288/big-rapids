@@ -1,7 +1,6 @@
 interface Env {
   RESEND_API_KEY?: string;
   RESEND_FROM_EMAIL?: string;
-  CONTACT_TO_EMAIL?: string;
 }
 
 interface PagesContext {
@@ -16,6 +15,8 @@ const MAX_LENGTHS = {
   message: 3000,
   website: 200,
 };
+
+const CONTACT_TO_EMAIL = "info@BRProducts.com";
 
 const json = (body: Record<string, unknown>, init?: ResponseInit) =>
   new Response(JSON.stringify(body), {
@@ -66,7 +67,7 @@ export const onRequestPost = async ({ request, env }: PagesContext) => {
     return json({ ok: false, message: "Please enter a valid email address." }, { status: 400 });
   }
 
-  if (!env.RESEND_API_KEY || !env.RESEND_FROM_EMAIL || !env.CONTACT_TO_EMAIL) {
+  if (!env.RESEND_API_KEY || !env.RESEND_FROM_EMAIL) {
     return json({ ok: false, message: "Email delivery is not configured." }, { status: 500 });
   }
 
@@ -97,7 +98,7 @@ export const onRequestPost = async ({ request, env }: PagesContext) => {
     },
     body: JSON.stringify({
       from: env.RESEND_FROM_EMAIL,
-      to: [env.CONTACT_TO_EMAIL],
+      to: [CONTACT_TO_EMAIL],
       subject,
       reply_to: email,
       text,

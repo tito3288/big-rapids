@@ -142,14 +142,17 @@ const qualityProofs = [
       </div>
 
       <div class="mt-14 grid items-start gap-10 lg:grid-cols-[minmax(0,1.08fr)_minmax(22rem,0.92fr)] lg:gap-14">
-        <MediaPlaceholder
-          slotId="01"
-          label="Company Story"
-          suggestedSubject="A wide historical or present-day plant image showing the Big Rapids Products manufacturing environment and sense of scale."
-          aspect="panoramic"
-          tone="light"
-          class="min-w-0 w-full"
-        />
+        <figure class="min-w-0 w-full overflow-hidden border border-paper-line bg-ink">
+          <img
+            src="/images/about-historic-building.jpg"
+            alt="Historic Big Rapids Tool and Engineering building and roadside sign"
+            class="h-auto w-full"
+            width="931"
+            height="447"
+            loading="lazy"
+            decoding="async"
+          />
+        </figure>
 
         <div class="grid border-l border-t border-paper-line">
           {manufacturingScope.map((item) => (
@@ -181,14 +184,17 @@ const qualityProofs = [
           </p>
         </div>
 
-        <MediaPlaceholder
-          slotId="02"
-          label="People & Process"
-          suggestedSubject="Engineering and manufacturing team members collaborating on the plant floor or reviewing a production program."
-          aspect="panoramic"
-          tone="oxblood"
-          class="min-w-0 w-full"
-        />
+        <figure class="min-w-0 aspect-[4/3] w-full overflow-hidden border border-foreground/20 bg-background sm:aspect-[16/7]">
+          <img
+            src="/images/about-people-process.jpg"
+            alt="Big Rapids Products team member inspecting production tooling"
+            class="h-full w-full object-cover object-[center_52%]"
+            width="2400"
+            height="1600"
+            loading="lazy"
+            decoding="async"
+          />
+        </figure>
       </div>
 
       <div class="mt-12 grid border-l border-t border-foreground/20 sm:grid-cols-2 xl:grid-cols-4">

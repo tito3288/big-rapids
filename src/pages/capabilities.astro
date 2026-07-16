@@ -1,12 +1,9 @@
 ---
 import SiteLayout from "../layouts/SiteLayout.astro";
-import MediaPlaceholder from "../components/MediaPlaceholder.astro";
 
 const title = "Precision Metal Stamping & Robotic Welding | Big Rapids Products";
 const description =
   "Advanced metal stamping, engineering, robotic welding, and assembly capabilities for automotive OEMs and Tier 1 suppliers.";
-const pressSpecificationsUrl =
-  "https://www.brproducts.com/wp-content/uploads/2026/03/BRP_PRESS_SPECS.pdf";
 
 const processStages = [
   {
@@ -142,24 +139,20 @@ const qualityProofs = [
           From concept to production, we help customers reduce program risk through engineering-driven manufacturing and dependable execution.
         </p>
         <div class="mt-10 flex flex-wrap gap-3">
-          <a
-            class="capabilities-spec-action btn-red w-fit max-w-full px-5 py-4 text-center sm:px-6"
-            href={pressSpecificationsUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-          >View Press Specifications ↗</a>
-          <a class="ghost-button w-fit max-w-full px-6 py-4 text-center" href="/#contact">Start a Project</a>
+          <a class="btn-red w-fit max-w-full px-6 py-4 text-center" href="/#contact">Start a Project</a>
         </div>
       </div>
 
-      <MediaPlaceholder
-        slotId="01"
-        label="Hero Establishing Image"
-        suggestedSubject="Wide press line or plant-floor view showing scale, equipment, and an active manufacturing environment."
-        aspect="panoramic"
-        tone="dark"
-        class="min-w-0"
-      />
+      <figure class="min-w-0 aspect-[4/3] overflow-hidden border border-line bg-surface sm:aspect-[16/7]">
+        <img
+          src="/images/capabilities-advanced-metal-stamping.jpg"
+          alt="Advanced metal-stamping press and die equipment at Big Rapids Products"
+          class="h-full w-full object-cover object-center"
+          width="2400"
+          height="1600"
+          decoding="async"
+        />
+      </figure>
     </div>
   </section>
 
@@ -179,14 +172,17 @@ const qualityProofs = [
       </div>
 
       <div class="mt-14 grid gap-10 lg:grid-cols-[minmax(18rem,0.72fr)_minmax(0,1.28fr)] lg:items-start lg:gap-14">
-        <MediaPlaceholder
-          slotId="02"
-          label="Engineering & Tooling"
-          suggestedSubject="CAD review, surface scanning, tooling detail, or die-development activity with a technical human element."
-          aspect="landscape"
-          tone="light"
-          class="lg:sticky lg:top-32"
-        />
+        <figure class="aspect-[4/3] overflow-hidden border border-paper-line bg-ink sm:aspect-video lg:sticky lg:top-32">
+          <img
+            src="/images/capabilities-engineering.jpg"
+            alt="Big Rapids Products team member reviewing production documentation"
+            class="h-full w-full object-cover object-[center_42%]"
+            width="1600"
+            height="2400"
+            loading="lazy"
+            decoding="async"
+          />
+        </figure>
 
         <ol class="grid border-l border-t border-paper-line sm:grid-cols-2">
           {processStages.map((stage, index) => (
@@ -211,17 +207,11 @@ const qualityProofs = [
     <div class="site-container">
       <div class="grid gap-7 md:grid-cols-[8rem_1fr] md:gap-10">
         <p class="text-xs font-black uppercase tracking-[0.24em] text-primary">Capacity</p>
-        <div class="flex flex-col justify-between gap-8 lg:flex-row lg:items-end">
+        <div>
           <div>
             <p class="eyebrow">Press Capacity</p>
             <h2 class="section-title mt-5 max-w-3xl">Capacity built for demanding programs.</h2>
           </div>
-          <a
-            class="capabilities-spec-action ghost-button w-fit max-w-full px-5 py-4 text-center sm:px-6"
-            href={pressSpecificationsUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-          >Press Specifications ↗</a>
         </div>
       </div>
 
@@ -238,7 +228,7 @@ const qualityProofs = [
         ))}
       </div>
       <p class="mt-7 max-w-3xl text-sm leading-relaxed text-muted">
-        Machine-by-machine tonnage, bed size, stroke, shut height, and feed details are maintained in the official press specification document.
+        Machine-by-machine press specifications are maintained in our official documentation. <a class="font-bold text-foreground underline decoration-primary underline-offset-4 transition hover:text-primary" href="/#contact">Contact our team</a> to discuss the right press capacity for your program.
       </p>
     </div>
   </section>
@@ -274,14 +264,17 @@ const qualityProofs = [
       <div class="grid gap-12 lg:grid-cols-[minmax(19rem,0.7fr)_minmax(0,1.3fr)] lg:gap-20">
         <div class="lg:sticky lg:top-32 lg:self-start">
           <p class="text-xs font-black uppercase tracking-[0.24em] text-foreground/65">Integrated Production</p>
-          <MediaPlaceholder
-            slotId="03"
-            label="Finished Assembly"
-            suggestedSubject="Finished welded assembly or multi-part stamped component photographed with clear geometry and material detail."
-            aspect="portrait"
-            tone="oxblood"
-            class="mx-auto mt-8 w-full max-w-sm lg:mx-0"
-          />
+          <figure class="mx-auto mt-8 aspect-[4/5] w-full max-w-sm overflow-hidden border border-foreground/20 bg-background lg:mx-0">
+            <img
+              src="/images/capabilities-assembly.jpg"
+              alt="Big Rapids Products assembly team working on metal components"
+              class="h-full w-full object-cover object-[center_45%]"
+              width="1600"
+              height="2400"
+              loading="lazy"
+              decoding="async"
+            />
+          </figure>
         </div>
 
         <div>
@@ -316,8 +309,7 @@ const qualityProofs = [
     <div class="site-container">
       <div class="grid items-start gap-12 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] lg:gap-20">
         <div class="lg:sticky lg:top-32 lg:self-start">
-          <p class="text-xs font-black uppercase tracking-[0.24em] text-primary">Joining</p>
-          <figure class="mt-8 aspect-video w-full max-w-2xl overflow-hidden border border-paper-line bg-ink">
+          <figure class="aspect-video w-full max-w-2xl overflow-hidden border border-paper-line bg-ink">
             <img
               src="/images/product-ev-appliance-building.jpg"
               alt="Big Rapids Products welder joining a metal component"

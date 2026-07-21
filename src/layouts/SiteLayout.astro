@@ -44,7 +44,7 @@ const socialImageUrl = new URL(socialImage, siteOrigin).href;
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
   </head>
-  <body data-reveal={enableReveal ? "on" : "off"}>
+  <body data-reveal-mode={enableReveal ? "on" : "off"}>
     <Header />
     <main>
       <slot />
@@ -65,7 +65,7 @@ const socialImageUrl = new URL(socialImage, siteOrigin).href;
       ];
 
       const setupScrollReveal = () => {
-        if (document.body.dataset.reveal === "off") return;
+        if (document.body.dataset.revealMode === "off") return;
 
         const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
         const targets = Array.from(new Set(revealSelectors.flatMap((selector) => Array.from(document.querySelectorAll(selector)))))

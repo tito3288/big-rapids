@@ -8,6 +8,7 @@ interface Props {
   description: string;
   canonicalPath: string;
   socialImage?: string;
+  enableReveal?: boolean;
 }
 
 const {
@@ -15,6 +16,7 @@ const {
   description,
   canonicalPath,
   socialImage = "/images/image-1.jpg",
+  enableReveal = true,
 } = Astro.props;
 
 const siteOrigin = "https://big-rapids.pages.dev";
@@ -42,7 +44,7 @@ const socialImageUrl = new URL(socialImage, siteOrigin).href;
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
   </head>
-  <body>
+  <body data-reveal={enableReveal ? "on" : "off"}>
     <Header />
     <main>
       <slot />
@@ -63,6 +65,8 @@ const socialImageUrl = new URL(socialImage, siteOrigin).href;
       ];
 
       const setupScrollReveal = () => {
+        if (document.body.dataset.reveal === "off") return;
+
         const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
         const targets = Array.from(new Set(revealSelectors.flatMap((selector) => Array.from(document.querySelectorAll(selector)))))
           .filter((target): target is HTMLElement => target instanceof HTMLElement && !target.closest("header"));

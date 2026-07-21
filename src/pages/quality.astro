@@ -95,11 +95,7 @@ const qualitySystems = [
             height="2400"
             decoding="async"
           />
-          <div class="inspection-grid absolute inset-0" aria-hidden="true"></div>
           <div class="absolute inset-0 bg-background/20" aria-hidden="true"></div>
-          <div class="quality-reticle" aria-hidden="true">
-            <span></span>
-          </div>
           <div class="absolute left-0 right-0 top-0 flex items-center justify-between border-b border-line px-5 py-4">
             <p class="text-[0.65rem] font-black uppercase tracking-[0.24em] text-foreground">Dimensional Control</p>
             <p class="text-[0.65rem] font-black uppercase tracking-[0.24em] text-primary">Verified</p>
@@ -253,53 +249,3 @@ const qualitySystems = [
     </div>
   </section>
 </SiteLayout>
-
-<style>
-  .inspection-grid {
-    background-image:
-      linear-gradient(rgb(255 255 255 / 0.09) 1px, transparent 1px),
-      linear-gradient(90deg, rgb(255 255 255 / 0.09) 1px, transparent 1px);
-    background-position: center;
-    background-size: 3rem 3rem;
-  }
-
-  .quality-reticle {
-    height: 8.5rem;
-    left: 50%;
-    position: absolute;
-    top: 38%;
-    transform: translate(-50%, -50%);
-    width: 8.5rem;
-  }
-
-  .quality-reticle::before,
-  .quality-reticle::after {
-    background: rgb(218 52 38 / 0.75);
-    content: "";
-    left: 50%;
-    position: absolute;
-    top: 50%;
-    transform: translate(-50%, -50%);
-  }
-
-  .quality-reticle::before {
-    height: 1px;
-    width: 100%;
-  }
-
-  .quality-reticle::after {
-    height: 100%;
-    width: 1px;
-  }
-
-  .quality-reticle span {
-    border: 1px solid rgb(255 255 255 / 0.4);
-    display: block;
-    height: 3.5rem;
-    left: 50%;
-    position: absolute;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    width: 3.5rem;
-  }
-</style>

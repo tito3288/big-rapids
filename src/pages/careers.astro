@@ -184,9 +184,12 @@ const careerReasons = [
           <p class="display-heading mx-auto max-w-4xl text-[clamp(2rem,3vw,3.1rem)] font-bold leading-[1.04] tracking-[-0.03em] text-foreground">
             If you are interested in a position at Big Rapids Products, please send your resume to
           </p>
-          <p class="careers-email-address mt-4 max-w-full text-[clamp(1.8rem,3.2vw,3.25rem)] font-bold leading-tight tracking-[-0.03em] [overflow-wrap:anywhere]">
+          <a
+            class="careers-email-address mt-4 inline-block max-w-full text-[clamp(1.8rem,3.2vw,3.25rem)] font-bold leading-tight tracking-[-0.03em] transition [overflow-wrap:anywhere]"
+            href={`mailto:${resumeEmail}`}
+          >
             {resumeEmail}
-          </p>
+          </a>
         </div>
       </div>
     </div>
@@ -200,5 +203,8 @@ const careerReasons = [
 
   .careers-email-address {
     color: var(--color-primary) !important;
+    text-decoration-line: underline !important;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 0.2em;
   }
 </style>

@@ -1,0 +1,104 @@
+---
+import SiteLayout from "../layouts/SiteLayout.astro";
+import termsHtml from "../content/terms-and-conditions.html?raw";
+
+const title = "Terms and Conditions | Big Rapids Products";
+const description =
+  "Review the Big Rapids Products standard terms for sales, services, purchasing, and purchase orders.";
+---
+
+<SiteLayout title={title} description={description} canonicalPath="/terms-and-conditions/" enableReveal={false}>
+  <section id="top" class="relative overflow-hidden border-b border-line bg-background pb-20 pt-44 text-muted sm:pb-24 sm:pt-52 lg:pt-56">
+    <div class="pointer-events-none absolute -right-16 top-24 hidden text-[18rem] font-black leading-none text-foreground/[0.025] xl:block" aria-hidden="true">
+      LEGAL
+    </div>
+
+    <div class="site-container relative z-10 grid items-end gap-10 lg:grid-cols-[minmax(0,1fr)_18rem] lg:gap-16">
+      <div>
+        <p class="eyebrow text-primary">Legal · Commercial Terms</p>
+        <h1 class="hero-title page-hero-title mt-7 max-w-5xl">Terms and Conditions</h1>
+        <p class="mt-7 max-w-3xl text-lg leading-relaxed sm:text-xl">
+          Standard terms governing sales of goods and services and the purchase of goods and services.
+        </p>
+      </div>
+
+      <div class="border-l border-line pl-6 lg:pb-2">
+        <p class="text-[0.65rem] font-black uppercase tracking-[0.22em] text-primary">Document Scope</p>
+        <p class="mt-3 text-xl font-bold text-foreground">Sales &amp; Purchasing</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-paper py-20 text-paper-muted sm:py-24 lg:py-28">
+    <div class="site-container grid items-start gap-10 lg:grid-cols-[11rem_minmax(0,1fr)] lg:gap-16">
+      <p class="text-xs font-black uppercase tracking-[0.24em] text-primary lg:sticky lg:top-28">Legal Terms</p>
+
+      <article class="legal-document max-w-5xl" set:html={termsHtml} />
+    </div>
+  </section>
+</SiteLayout>
+
+<style>
+  .legal-document {
+    color: var(--color-paper-muted);
+    font-size: 1rem;
+    line-height: 1.75;
+  }
+
+  :global(.legal-document h2) {
+    color: var(--color-ink);
+    font-size: clamp(1.75rem, 4vw, 2.75rem);
+    font-weight: 800;
+    letter-spacing: -0.025em;
+    line-height: 1.1;
+    margin-bottom: 1rem;
+  }
+
+  :global(.legal-document h2:not(:first-child)) {
+    border-top: 1px solid var(--color-paper-line);
+    margin-top: 5rem;
+    padding-top: 4rem;
+  }
+
+  :global(.legal-document h3) {
+    color: var(--color-ink);
+    font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+    font-weight: 800;
+    letter-spacing: 0.025em;
+    line-height: 1.35;
+    margin-bottom: 2.5rem;
+    text-transform: uppercase;
+  }
+
+  :global(.legal-document p) {
+    margin-top: 1.25rem;
+  }
+
+  :global(.legal-document p:has(> strong:only-child)) {
+    border-top: 1px solid var(--color-paper-line);
+    color: var(--color-ink);
+    font-size: 1.2rem;
+    font-weight: 800;
+    line-height: 1.35;
+    margin-top: 3rem;
+    padding-top: 1.5rem;
+  }
+
+  :global(.legal-document p > strong:first-child) {
+    color: var(--color-ink);
+  }
+
+  :global(.legal-document a) {
+    color: var(--color-primary);
+    font-weight: 700;
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 0.2em;
+  }
+
+  @media (min-width: 640px) {
+    .legal-document {
+      font-size: 1.075rem;
+    }
+  }
+</style>

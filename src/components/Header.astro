@@ -66,7 +66,7 @@ const proofPoints = ["Founded 1977", "5 facilities", "IATF 16949:2016"];
         </div>
 
         <a
-          class="btn-red ml-auto px-2 text-center text-[0.52rem] tracking-[0.07em] lg:!hidden sm:px-4 sm:text-[0.68rem] sm:tracking-[0.14em]"
+          class="mobile-quote-button btn-red ml-auto px-2 text-center lg:!hidden sm:px-4"
           href={quoteHref}
         >Request a Quote</a>
 
@@ -128,6 +128,18 @@ const proofPoints = ["Founded 1977", "5 facilities", "IATF 16949:2016"];
 </header>
 
 <style>
+  .mobile-quote-button {
+    font-size: 0.52rem;
+    letter-spacing: 0.07em;
+  }
+
+  @media (min-width: 640px) {
+    .mobile-quote-button {
+      font-size: 0.68rem;
+      letter-spacing: 0.14em;
+    }
+  }
+
   .header-nav-link:hover .header-nav-label,
   .header-nav-link:focus-visible .header-nav-label {
     color: var(--color-background);

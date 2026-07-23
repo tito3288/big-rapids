@@ -1,12 +1,9 @@
 ---
+import PlantLocations from "./PlantLocations.astro";
+
 const contactDetails = [
   { label: "Phone", value: "(231) 796-3593", href: "tel:+12317963593" },
   { label: "Fax", value: "(231) 796-9066" },
-];
-
-const plants = [
-  { region: "Big Rapids, MI", count: "3 facilities" },
-  { region: "Mt. Sterling, KY", count: "2 facilities" },
 ];
 
 const projectDetails = ["Part drawings", "Material spec", "Annual volume", "Secondary operations"];
@@ -39,19 +36,6 @@ const projectDetails = ["Part drawings", "Material spec", "Annual volume", "Seco
           ))}
         </div>
 
-        <div class="mt-6 border border-line">
-          <div class="border-b border-line p-5">
-            <p class="eyebrow text-muted">Production Footprint</p>
-          </div>
-          <div class="grid gap-px bg-line sm:grid-cols-2">
-            {plants.map((plant) => (
-              <div class="bg-surface p-5">
-                <h3 class="text-xl font-bold text-foreground">{plant.region}</h3>
-                <p class="mt-2 text-sm uppercase tracking-[0.16em] text-muted">{plant.count}</p>
-              </div>
-            ))}
-          </div>
-        </div>
       </aside>
 
       <div class="border border-line bg-background">
@@ -97,6 +81,8 @@ const projectDetails = ["Part drawings", "Material spec", "Annual volume", "Seco
         </div>
       </div>
     </div>
+
+    <PlantLocations />
   </div>
 </section>
 

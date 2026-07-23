@@ -1,0 +1,124 @@
+---
+const locations = [
+  {
+    name: "Maple",
+    type: "Corporate Headquarters",
+    street: "1313 Maple Street",
+    city: "Big Rapids, MI 49307",
+    directions:
+      "https://www.google.com/maps/dir/?api=1&destination=1313%20Maple%20Street%2C%20Big%20Rapids%2C%20MI%2049307",
+    appleDirections:
+      "https://maps.apple.com/?daddr=1313%20Maple%20Street%2C%20Big%20Rapids%2C%20MI%2049307&dirflg=d",
+  },
+  {
+    name: "DeKraft",
+    type: "Plant Location",
+    street: "525 DeKraft Avenue",
+    city: "Big Rapids, MI 49307",
+    directions:
+      "https://www.google.com/maps/dir/?api=1&destination=525%20DeKraft%20Avenue%2C%20Big%20Rapids%2C%20MI%2049307",
+    appleDirections:
+      "https://maps.apple.com/?daddr=525%20DeKraft%20Avenue%2C%20Big%20Rapids%2C%20MI%2049307&dirflg=d",
+  },
+  {
+    name: "Bronson",
+    type: "Plant Location",
+    street: "560 N. Bronson Avenue",
+    city: "Big Rapids, MI 49307",
+    directions:
+      "https://www.google.com/maps/dir/?api=1&destination=560%20N.%20Bronson%20Avenue%2C%20Big%20Rapids%2C%20MI%2049307",
+    appleDirections:
+      "https://maps.apple.com/?daddr=560%20N.%20Bronson%20Avenue%2C%20Big%20Rapids%2C%20MI%2049307&dirflg=d",
+  },
+  {
+    name: "Adena",
+    type: "Plant Location",
+    street: "102 Adena Drive",
+    city: "Mt. Sterling, KY 40353",
+    directions:
+      "https://www.google.com/maps/dir/?api=1&destination=102%20Adena%20Drive%2C%20Mt.%20Sterling%2C%20KY%2040353",
+    appleDirections:
+      "https://maps.apple.com/?daddr=102%20Adena%20Drive%2C%20Mt.%20Sterling%2C%20KY%2040353&dirflg=d",
+  },
+  {
+    name: "Flint",
+    type: "Plant Location",
+    street: "310 Flint Drive",
+    city: "Mt. Sterling, KY 40353",
+    directions:
+      "https://www.google.com/maps/dir/?api=1&destination=310%20Flint%20Drive%2C%20Mt.%20Sterling%2C%20KY%2040353",
+    appleDirections:
+      "https://maps.apple.com/?daddr=310%20Flint%20Drive%2C%20Mt.%20Sterling%2C%20KY%2040353&dirflg=d",
+  },
+];
+---
+
+<div class="mt-16 border-t border-line pt-14 md:mt-20 md:pt-16">
+  <div class="grid gap-6 lg:grid-cols-[minmax(0,0.72fr)_minmax(0,1fr)] lg:items-end">
+    <div>
+      <p class="eyebrow mb-4 text-primary">Our Locations</p>
+      <h3 class="text-3xl font-bold tracking-[-0.02em] text-foreground md:text-4xl">Plant Locations</h3>
+    </div>
+    <p class="max-w-2xl text-base leading-7 text-muted md:text-lg">
+      Select a facility to open turn-by-turn directions on your device.
+    </p>
+  </div>
+
+  <div class="mt-9 grid gap-px border border-line bg-line sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
+    {
+      locations.map((location) => (
+        <a
+          href={location.directions}
+          data-directions-link
+          data-apple-directions={location.appleDirections}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label={`Get directions to ${location.name}, ${location.street}, ${location.city}`}
+          class="group flex min-h-64 flex-col bg-background p-6 transition-colors hover:bg-[#121827] focus-visible:relative focus-visible:z-10 focus-visible:outline-2 focus-visible:outline-offset-[-2px] focus-visible:outline-primary md:p-7"
+        >
+          <div class="mb-8 flex items-start justify-between gap-4">
+            <p class="eyebrow text-primary">{location.type}</p>
+            <svg
+              class="h-5 w-5 shrink-0 text-muted transition group-hover:text-primary"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.75"
+              aria-hidden="true"
+            >
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 21s6-5.2 6-11a6 6 0 1 0-12 0c0 5.8 6 11 6 11Z" />
+              <circle cx="12" cy="10" r="2.25" />
+            </svg>
+          </div>
+
+          <h4 class="text-2xl font-bold text-foreground transition-colors group-hover:text-primary">{location.name}</h4>
+          <address class="mt-4 not-italic leading-7 text-muted">
+            <span class="block">{location.street}</span>
+            <span class="block">{location.city}</span>
+          </address>
+
+          <span class="mt-auto pt-8 text-xs font-semibold uppercase tracking-[0.18em] text-foreground">
+            Get Directions
+            <span class="ml-1 inline-block transition-transform group-hover:translate-x-1" aria-hidden="true">→</span>
+          </span>
+        </a>
+      ))
+    }
+  </div>
+</div>
+
+<script>
+  const isAppleMobile =
+    /iPad|iPhone|iPod/.test(navigator.userAgent) ||
+    (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
+
+  if (isAppleMobile) {
+    document.querySelectorAll<HTMLAnchorElement>("[data-directions-link]").forEach((link) => {
+      const appleDirections = link.dataset.appleDirections;
+
+      if (appleDirections) {
+        link.href = appleDirections;
+      }
+    });
+  }
+</script>

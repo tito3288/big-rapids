@@ -111,7 +111,7 @@ const projectDetails = ["Part drawings", "Material spec", "Annual volume", "Seco
       });
       const result = await response.json();
 
-      status.textContent = result.ok ? "Thanks — we'll be in touch." : result.message || "Something went wrong. Please try again.";
+      status.textContent = result.ok ? "Thanks! We'll be in touch." : result.message || "Something went wrong. Please try again.";
       status.hidden = false;
       status.classList.toggle("text-primary", !result.ok);
 

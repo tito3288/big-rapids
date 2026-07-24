@@ -166,7 +166,7 @@ const qualityProofs = [
             One manufacturing partner from design through launch.
           </h2>
           <p class="mt-6 max-w-3xl text-lg leading-relaxed">
-            Engineering, tooling, automation, and production teams work as one system—improving manufacturability, reducing handoffs, and supporting dependable execution from early review through stable production.
+            Engineering, tooling, automation, and production teams work as one system, improving manufacturability, reducing handoffs, and supporting dependable execution from early review through stable production.
           </p>
         </div>
       </div>
@@ -240,7 +240,7 @@ const qualityProofs = [
         <div>
           <p class="text-xs font-black uppercase tracking-[0.22em]">Core Capabilities</p>
           <h2 class="display-heading mt-5 max-w-4xl text-[clamp(2.4rem,4vw,4rem)] font-bold leading-[0.98] tracking-[-0.035em] text-ink">
-            Engineering, tooling, and production—connected.
+            Engineering, tooling, and production. Connected.
           </h2>
           <p class="mt-6 max-w-3xl text-lg leading-relaxed">
             Technical development and production services stay connected, giving customer teams a clearer path from part intent to repeatable manufacturing.
@@ -333,8 +333,13 @@ const qualityProofs = [
           </p>
 
           <ul class="mt-9 grid border-l border-t border-paper-line sm:grid-cols-2" aria-label="Automotive welding capabilities">
-            {weldingCapabilities.map((capability) => (
-              <li class="flex min-h-20 items-center border-b border-r border-paper-line p-4 text-sm font-bold text-ink">
+            {weldingCapabilities.map((capability, index) => (
+              <li
+                class:list={[
+                  "flex min-h-20 items-center border-b border-r border-paper-line p-4 text-sm font-bold text-ink",
+                  index === weldingCapabilities.length - 1 && weldingCapabilities.length % 2 === 1 && "sm:col-span-2 sm:justify-center",
+                ]}
+              >
                 <span>{capability}</span>
               </li>
             ))}
@@ -368,7 +373,7 @@ const qualityProofs = [
 
       <div class="mt-16 flex flex-col justify-between gap-8 border-t border-line pt-10 lg:flex-row lg:items-end">
         <p class="display-heading max-w-4xl text-[clamp(2.2rem,3.7vw,4rem)] font-bold leading-[0.98] tracking-[-0.035em] text-foreground">
-          Your next manufacturing partner should reduce risk—not add it.
+          Your next manufacturing partner should reduce risk, not add it.
         </p>
         <a class="btn-red shrink-0 px-8 py-5" href="/#contact">Start a Project</a>
       </div>
